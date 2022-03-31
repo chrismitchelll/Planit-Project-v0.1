@@ -1,0 +1,54 @@
+:root {
+  --primary-color: #ffff;
+  --secondary-color: #212121;
+}
+
+.dark-theme {
+  --primary-color: #242527;
+  --secondary-color: #fff;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.about h1 {
+  border-bottom: 2px solid black;
+}
+
+.about-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  width: 30%;
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.section-right,
+.section-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+}
+
+#tech-stack {
+  width: 50%;
+}
+
+#author {
+  width: 30%;
+}

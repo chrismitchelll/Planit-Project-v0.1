@@ -1,0 +1,25 @@
+// @use "../styles/partials/mixins" as *;
+@use "../styles/partials/breakpoints" as *;
+// @use "../styles/partials/resets" as *;
+// @use "../styles/partials/typography" as *;
+// @use "../styles/partials/variables" as *;
+
+* {
+  margin: 0;
+  font-family: "Inter", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+// WRAPPERS
+
+@mixin wrapper-mobile {
+  margin: 0 1rem; //16px
+}
+
+@mixin wrapper-tablet {
+  margin: 0 2rem; //32px
+}
+
+@mixin wrapper-desktop {
+  margin: 0 auto;
+  max-width: 1280px; //1280 px
+}

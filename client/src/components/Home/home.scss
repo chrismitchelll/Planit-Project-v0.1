@@ -1,0 +1,84 @@
+@use "../../styles/partials/breakpoints" as breakpoints;
+
+//----Night Mode-----//
+
+:root {
+  --primary-color: #ffff;
+  --secondary-color: #212121;
+}
+
+.dark-theme {
+  --primary-color: #242527;
+  --secondary-color: #fff;
+}
+
+.page {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding-left: 8rem;
+  padding-right: 8rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  height: 80vh;
+}
+
+select {
+  width: 80%;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  border: black 2px solid;
+}
+
+.flag {
+  margin: 2rem;
+  border: black solid 1px;
+  border-radius: 50%;
+  height: 8rem;
+  width: 8rem;
+  background-image: url(../../assets/globepin.png);
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// .country-selector,
+.infocard-details {
+  // width: 100%;
+  // height: 50vh;
+}
+
+.next-button,
+.confirm-button {
+  background-color: rgb(00, 200, 90);
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 10rem;
+  border-radius: 10%;
+  border: #212121 2px solid;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.next-button,
+.confirm-button:hover {
+  opacity: 0.8;
+}
+
+.confirm-button {
+  width: 5rem;
+}
+
+.next-button:hover {
+  opacity: 0.8;
+}
