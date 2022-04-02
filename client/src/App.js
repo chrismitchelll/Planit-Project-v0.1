@@ -1,15 +1,11 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./components/Main/Main";
 import About from "./pages/About/About";
 import Budget from "./pages/Budget/Budget";
 import Tools from "./pages/Tools/Tools";
 import Profile from "./pages/Profile/Profile";
-import Login from "./components/Login/Login";
+import Plan from "./pages/Plan/Plan";
+// import Login from "./components/Login/Login";
 import Landing from "./pages/Landing/Landing";
 import "./styles/styles.scss";
 
@@ -45,13 +41,18 @@ function App() {
             render={(routerProps) => <Tools {...routerProps} />}
           />{" "}
         </Switch>
-
-        {/* <Router>
-          <Switch>
-            <Route exact path="/login" component={Login} />
-          </Switch>
-        </Router> */}
-
+        {/* <Switch>
+          <Route
+            path="/login"
+            render={(routerProps) => <Login {...routerProps} />}
+          />{" "}
+        </Switch> */}
+        <Switch>
+          <Route
+            path="/plan"
+            render={(routerProps) => <Plan {...routerProps} />}
+          />{" "}
+        </Switch>
         <Switch>
           <Route
             exact

@@ -18,3 +18,17 @@
   // padding: 30px;
   margin: 20px;
 }
+
+.infocard-details:hover {
+  opacity: 0.8;
+  transition: 0.35s ease-in-out;
+  transform: translateY(-2px);
+}
+
+#flag {
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+  //   url="{complexDetails.flag}";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

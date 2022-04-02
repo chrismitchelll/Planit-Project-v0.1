@@ -3,33 +3,33 @@ import Selector from "../../components/Selector/Selector";
 import Costs from "../../components/Costs/Costs";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import BYT from "../../assets/bytlogo.png";
+
 import "./budget.scss";
 import axios from "axios";
 
 export default class Budget extends Component {
   state = {
     countries: null,
-    countryDetails: null,
-    chosenCountryDetails: null,
-    userCountry: null,
+    complexCountryDetails: null,
+    basicCountryDetails: null,
   };
-  //Part One. //triggered on first page load
+
   componentDidMount() {
-    this.getAllCountries();
-    this.getACountry();
+    this.getAllBasicCountries();
   }
 
-  componentDidUpdate() {
-    console.log("countries" + " = ", this.state.countries);
-    console.log("countryDetails" + " = ", this.state.countryDetails);
-    console.log(
-      "chosenCountryDetails" + " = ",
-      this.state.chosenCountryDetails
-    );
-    console.log("userCountry" + " = ", this.state.userCountry);
-  }
+  loadComplexCountryDetails = (countryId) => {
+    axios
+      .get(`http://localhost:8888/countries` + "/" + countryId)
+      .then((response) => {
+        const loadedCountry = response.data;
+        this.setState({ complexCountryDetails: loadedCountry });
+        console.log(this.state.complexCountryDetails);
+      });
+  };
 
-  getAllCountries = () => {
+  getAllBasicCountries = () => {
     axios
       .get(`https://travelbriefing.org/countries.json`)
       .then((response) => {
@@ -40,45 +40,68 @@ export default class Budget extends Component {
       });
   };
 
-  getACountry = () => {
+  loadBasicCountryDetails = (countryCode) => {
     axios
-      .get(`https://travelbriefing.org/Czech?format=json`)
+      .get(`https://travelbriefing.org/` + `${countryCode}` + `?format=json`)
       .then((response) => {
-        this.setState({ chosenCountryDetails: response.data });
+        this.setState({ basicCountryDetails: response.data });
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
+  //could combine called functiosn into 1.
   handleSelectedCountry = (event) => {
-    console.log(event.target.value);
+    this.loadComplexCountryDetails(event.target.value);
+    this.loadBasicCountryDetails(event.target.value);
+  };
+
+  // setState to a random item in from an array of countries
+  handleRandomCountry = () => {
     this.setState({
-      [event.target.name]: event.target.value,
-      countries: event.target.value,
-      countryDetails: event.target.value,
+      countries: Math.floor(Math.random() * this.state.countries.length),
     });
+    console.log(this.state.countries);
   };
 
   render() {
     return (
       <>
         <Header />
+
         <div className="page">
           <h2>Budget </h2>
+          <div className="budget-overview">
+            <p>
+              Calculating a budget for a trip can be complicated. Here are some
+              tips to help you to estimate how much you may spend on your
+              vacation. These estimates are Per person.
+            </p>
+            <div className="budgetyourtrip-banner">
+              Powered by: <img src={BYT}></img> <br></br>
+              <span className="budgetyourtrip-banner__text">
+                Budget Your Trip
+              </span>
+            </div>{" "}
+          </div>
           <div className="content-wrapper">
-            {this.state.countries && (
-              <Selector
-                countries={this.state.countries}
-                handleSelectedCountry={this.handleSelectedCountry}
-              />
-            )}
-            {this.state.chosenCountryDetails && (
-              <Costs
-                details={this.state.chosenCountryDetails}
-                handleSelectedCountry={this.handleSelectedCountry}
-              />
-            )}
+            <div className="country-selector">
+              {this.state.countries && (
+                <Selector
+                  countries={this.state.countries}
+                  handleSelectedCountry={this.handleSelectedCountry}
+                />
+              )}
+            </div>
+            {this.state.basicCountryDetails &&
+              this.state.complexCountryDetails && (
+                <Costs
+                  basicDetails={this.state.basicCountryDetails}
+                  complexDetails={this.state.complexCountryDetails}
+                  handleSelectedCountry={this.handleSelectedCountry}
+                />
+              )}
           </div>
           <div className="next-button">Next</div>
         </div>

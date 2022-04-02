@@ -3,77 +3,62 @@ import "./selector.scss";
 
 export default function Selector({
   handleSelectedCountry,
-  handleRandomCountry,
+  confirmSelectedCountry,
   chosenCountry,
-  countries,
-  oneCountry,
 }) {
-  //   const setCountry = console.log(countries);
-  //   const [count, setCount] = useState(0);
   return (
     <>
-      <div className="country-selector">
-        <div className="flag"></div>{" "}
-        {/* <select onChange={state.onCharSelect}> */}
-        <select
-          className="country-selector__dropdown"
-          name="countries"
-          id="countries"
-          onChange={handleSelectedCountry}
-          value={chosenCountry}
-          //   onClick={() => this.setState({})}
-        >
-          <option value="default">Choose A Destination</option>
-          {/* {countries.map((country) => (
-            <option key={country.name} value={country.name}>
-              {country.name}
-            </option>
-          ))} */}
-          <option value="Austria" key="Austria">
-            🇦🇹 Austria
-          </option>
-          <option value="Belgium">🇧🇪 Belgium</option>
-          <option value="Bulgaria">🇧🇬 Bulgaria</option>
-          <option value="Croatia">🇭🇷 Croatia</option>
-          <option value="Cyprus">🇨🇾 Cyprus</option>
-          <option value="Czechia">🇨🇿 Czechia</option>
-          <option value="Denmark">🇩🇰 Denmark</option>
-          <option value="Estonia">🇪🇪 Estonia</option>
-          <option value="Finland">🇫🇮 Finland</option>
-          <option value="France">🇫🇷 France</option>
-          <option value="Germany">🇩🇪 Germany</option>
-          <option value="Greece">🇬🇷 Greece</option>
-          <option value="Hungary">🇭🇺 Hungary</option>
-          <option value="Ireland">🇮🇪 Ireland</option>
-          <option value="Italy">🇮🇹 Italy</option>
-          <option value="Latvia">🇱🇻 Latvia</option>
-          <option value="Lithuania">🇱🇹 Lithuania</option>
-          <option value="Luxembourg">🇱🇺 Luxembourg</option>
-          <option value="Malta">🇲🇹 Malta</option>
-          <option value="Montenegro">🇲🇹 Montenegro</option>
-          <option value="Netherlands">🇳🇱 Netherlands</option>
-          <option value="N. Macedonia">🇳🇱 N. Macedonia</option>
-          <option value="Poland">🇵🇱 Poland</option>
-          <option value="Portugal">🇵🇹 Portugal</option>
-          <option value="Romania">🇷🇴 Romania</option>
-          <option value="Serbia">🇷🇸 Serbia</option>
-          <option value="Slovakia">🇷🇸 Slovakia</option>
-          <option value="Slovenia">🇸🇰 Slovenia</option>
-          <option value="Spain">🇪🇸 Spain</option>
-          <option value="Sweden">🇸🇪 Sweden</option>
-          <option value="Turkey">🇸🇪 Turkey</option>
-          <option value="United Kingdom">🇬🇧 United Kingdom</option>
-          <option value="Canada">🇨🇦 Canada</option>
-          <option value="United States of America">
+      <div className="flag"></div>{" "}
+      <select
+        className="country-selector__dropdown"
+        name="countries"
+        id="countries"
+        onChange={handleSelectedCountry}
+        value={chosenCountry}
+      >
+        <option value="-">Choose A Destination</option>
+        <option value="AT">🇦🇹 Austria</option>
+        <option value="BE">🇧🇪 Belgium</option>
+        {/* <option value="Bulgaria">🇧🇬 Bulgaria</option> NOT ADDED */}
+        <option value="HR">🇭🇷 Croatia</option>
+        <option value="CY">🇨🇾 Cyprus</option>
+        <option value="CZ">🇨🇿 Czechia</option>
+        <option value="DK">🇩🇰 Denmark</option>
+        <option value="EE">🇪🇪 Estonia</option>
+        <option value="FI">🇫🇮 Finland</option>
+        <option value="FR">🇫🇷 France</option>
+        <option value="DE">🇩🇪 Germany</option>
+        <option value="GR">🇬🇷 Greece</option>
+        <option value="HU">🇭🇺 Hungary</option>
+        <option value="IE">🇮🇪 Ireland</option>
+        <option value="IT">🇮🇹 Italy</option>
+        <option value="LV">🇱🇻 Latvia</option>
+        <option value="LT">🇱🇹 Lithuania</option>
+        <option value="LU">🇱🇺 Luxembourg</option>
+        {/* <option value="Malta">🇲🇹 Malta</option> NEEDS ADDING */}
+        {/* <option value="Montenegro">🇲🇹 Montenegro</option> NOT ADDED */}
+        <option value="NL">🇳🇱 Netherlands</option>
+        <option value="NO">🇳o Norway</option>
+        {/* <option value="N. Macedonia">🇳🇱 N. Macedonia</option> */}
+        {/* <option value="">🇵🇱 Poland</option> */}
+        <option value="PT">🇵🇹 Portugal</option>
+        <option value="RO">🇷🇴 Romania</option>
+        {/* <option value="Serbia">🇷🇸 Serbia</option> */}
+        <option value="SK">🇷🇸 Slovakia</option>
+        <option value="SI">🇸🇰 Slovenia</option>
+        <option value="ES">🇪🇸 Spain</option>
+        <option value="SE">🇸🇪 Sweden</option>
+        <option value="CH">🇸🇪 Switzerland</option>
+        <option value="TR">🇸🇪 Turkey</option>
+        <option value="GB">🇬🇧 United Kingdom</option>
+        <option value="CA">🇨🇦 Canada</option>
+        {/* <option value="US">
             🇺🇸 United States of America
-          </option>
-        </select>
-        <div className="confirm-button">Confirm</div>
-        Not Sure Where to Go?
-        <div className="confirm-button" onClick={handleRandomCountry}>
-          Inspire Me
-        </div>
-        {/* <div className="next-button">Inspire Me</div> */}
+          </option> */}
+      </select>
+      <div className="confirm-button" onClick={confirmSelectedCountry}>
+        {" "}
+        Confirm
       </div>
     </>
   );

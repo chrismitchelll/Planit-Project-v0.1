@@ -3,7 +3,7 @@
 //----Night Mode-----//
 
 :root {
-  --primary-color: #ffff;
+  --primary-color: rgba(245, 245, 245, 0.5);
   --secondary-color: #212121;
 }
 
@@ -33,6 +33,7 @@ select {
   display: flex;
   flex-direction: row;
   border: black 2px solid;
+  border-radius: 5px;
 }
 
 .flag {
@@ -51,13 +52,14 @@ select {
 }
 
 // .country-selector,
-.infocard-details {
-  // width: 100%;
-  // height: 50vh;
-}
+// .infocard-details {
+// width: 100%;
+// height: 50vh;
+// }
 
 .next-button,
-.confirm-button {
+.confirm-button,
+.traveller-button {
   background-color: rgb(00, 200, 90);
   color: var(--secondary-color);
   display: flex;
@@ -70,9 +72,12 @@ select {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
 .next-button,
 .confirm-button:hover {
   opacity: 0.8;
+  transition: 0.35s ease-in-out;
+  transform: translateY(1px);
 }
 
 .confirm-button {

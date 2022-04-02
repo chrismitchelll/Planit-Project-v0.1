@@ -8,6 +8,14 @@ import List from "../../assets/icons/taskbar/list.png";
 import About from "../../assets/icons/taskbar/info.png";
 import Welcome from "../../assets/icons/taskbar/welcome.png";
 
+let scrollUp = () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+};
+
 export class Footer extends Component {
   render() {
     return (
@@ -16,42 +24,72 @@ export class Footer extends Component {
           <ul className="footer__list">
             <Link to={`/welcome`}>
               <li className="footer__list--li">
-                <img src={Welcome} alt="home-icon" id="footer-icon" />
+                <img
+                  src={Welcome}
+                  onClick={scrollUp()}
+                  alt="home-icon"
+                  id="footer-icon"
+                />
                 <a href="/">Landing</a>
               </li>
             </Link>
             <Link to={`/`}>
               <li className="footer__list--li">
                 {" "}
-                <img src={Home} alt="home-icon" id="footer-icon" />
+                <img
+                  src={Home}
+                  onClick={scrollUp()}
+                  alt="home-icon"
+                  id="footer-icon"
+                />
                 <a href="/">Main</a>
               </li>
             </Link>
             <Link to={`/budget`}>
               <li className="footer__list--li">
                 {" "}
-                <img src={Wallet} alt="home-icon" id="footer-icon" />
+                <img
+                  src={Wallet}
+                  onClick={scrollUp()}
+                  alt="home-icon"
+                  id="footer-icon"
+                />
                 <a href="/">Budget</a>
               </li>
             </Link>{" "}
             <Link to={`/tools`}>
               <li className="footer__list--li">
                 {" "}
-                <img src={Exchange} alt="home-icon" id="footer-icon" />
+                <img
+                  src={Exchange}
+                  onClick={scrollUp()}
+                  alt="home-icon"
+                  id="footer-icon"
+                />
                 <a href="/">Tools</a>
               </li>
             </Link>{" "}
-            <Link to={`/`}>
+            <Link to={`/plan`}>
               <li className="footer__list--li">
                 {" "}
-                <img src={List} alt="home-icon" id="footer-icon" />
+                <img
+                  src={List}
+                  onClick={scrollUp()}
+                  alt="home-icon"
+                  id="footer-icon"
+                />
                 <a href="/">My Trips</a>
               </li>
             </Link>{" "}
             <Link to={`/about`}>
               <li className="footer__list--li">
                 {" "}
-                <img src={About} alt="home-icon" id="footer-icon" />
+                <img
+                  src={About}
+                  onClick={scrollUp()}
+                  alt="home-icon"
+                  id="footer-icon"
+                />
                 <a href="/">About </a>
               </li>
             </Link>

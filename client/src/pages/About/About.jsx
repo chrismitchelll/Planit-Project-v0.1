@@ -14,7 +14,13 @@ export class About extends Component {
         <Header />
         {/* <Foot2 /> */}
         <div className="about">
-          <h1>About Me</h1>{" "}
+          <h1>About This Website</h1>
+          <div className="section-right">
+            <h2>Tech Stack</h2>
+            This website was built using:
+            <img src={techStack} alt="techstack" id="tech-stack" />
+          </div>
+          <h2>About The Author</h2>{" "}
           <div className="section-left">
             <img src={author} alt="author" id="author" />
             <ul className="about-links">
@@ -30,11 +36,6 @@ export class About extends Component {
                 <a href="https://github.com/chrismitchelll/">Email</a>
               </li>
             </ul>
-          </div>
-          <div className="section-right">
-            <h2>Tech Stack</h2>
-            This website was built using:
-            <img src={techStack} alt="techstack" id="tech-stack" />
           </div>
         </div>
         <Footer />

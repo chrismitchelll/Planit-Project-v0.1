@@ -4,7 +4,7 @@ import "./header.scss";
 import sun from "../../assets/icons/dark-mode/sun.png";
 import moon from "../../assets/icons/dark-mode/moon.png";
 import userIcon from "../../assets/icons/user.png";
-import logoIcon from "../../assets/icons/travel.png";
+import logoIcon from "../../assets/planit.png";
 
 const toggleMode = () => {
   document.body.classList.toggle("dark-theme");

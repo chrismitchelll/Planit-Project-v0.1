@@ -1,15 +1,5 @@
 //----Night Mode-----//
 
-:root {
-  --primary-color: #ffff;
-  --secondary-color: #212121;
-}
-
-.dark-theme {
-  --primary-color: #242527;
-  --secondary-color: #fff;
-}
-
 #dlicon {
   width: 30px;
   cursor: pointer;
@@ -116,14 +106,17 @@
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #f1f1f1;
+  transition: 0.35s ease-in-out;
 }
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+  transition: 0.35s ease-in-out;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+  transition: 0.35s ease-in-out;
 }

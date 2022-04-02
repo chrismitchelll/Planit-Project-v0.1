@@ -1,67 +1,121 @@
 import React from "react";
 import "./details.scss";
 
-export default function Details({
-  handleSelectedCountry,
-  chosenCountryDetails,
-  oneCountry,
-  details,
-  chosenCountryFlag,
-}) {
-  // const oneCountryData = oneCountry.map((data) => {
-  //   console.log(data);
-  // });
-
+export default function Details({ basicDetails, complexDetails }) {
   const conversionRate = (
-    Math.round(details.currency.rate * 100) / 100
+    Math.round(basicDetails.currency.rate * 100) / 100
   ).toFixed(2);
+
+  const temperatureRate = (
+    Math.round(basicDetails.weather.April.pAvg * 100) / 100
+  ).toFixed(1);
+
+  const vaccinationMarkup =
+    basicDetails.vaccinations.length > 0 ? (
+      basicDetails.vaccinations.map((vac) => {
+        return (
+          <>
+            <h5>{vac.name}</h5>
+            <p>{vac.message}</p>
+          </>
+        );
+      })
+    ) : (
+      <p>No Vaccinations</p>
+    );
+
+  const languageMarkup =
+    basicDetails.language.length > 0 ? (
+      basicDetails.language.map((lan) => {
+        return (
+          <>
+            <h5>{lan.language}</h5>
+            <p>
+              Official? <h5>{lan.official}</h5>{" "}
+            </p>
+          </>
+        );
+      })
+    ) : (
+      <p>No Official Languages</p>
+    );
+
+  const neighboursMarkup =
+    basicDetails.neighbors.length > 0 ? (
+      basicDetails.neighbors.map((cou) => {
+        return (
+          <>
+            <h5>{cou.name}</h5>
+          </>
+        );
+      })
+    ) : (
+      <p>No Neighbouring Countries</p>
+    );
 
   return (
     <>
       <div className="infocard-details__wrapper">
+        {/* <div className="infocard-details" id="flag">
+          <img src={complexDetails.flag} alt="flag" />
+        </div>
+        <div className="infocard-details">
+          <span className="title">Neighbouring Countries</span>
+          <span>{neighboursMarkup}</span>
+        </div> */}
         <div className="infocard-details">
           <span className="title">Capital City</span>
 
           <span className="value">
-            {details.names.full} ({details.names.iso2})
+            {complexDetails.capital} ({basicDetails.names.iso2})
           </span>
         </div>
         <div className="infocard-details">
-          <span className="title">Population</span>
-          <span className="value">{oneCountry.population}</span>
+          <span className="title">Neighbouring Countries</span>
+          <span>{neighboursMarkup}</span>
         </div>
       </div>
       <div className="infocard-details__wrapper">
         <div className="infocard-details">
           <span className="title">Official Language</span>
-          <span className="value">{details.language.language}</span>
+          <span className="value">{languageMarkup}</span>
         </div>{" "}
         <div className="infocard-details">
           <span className="title">Timezone</span>
-          <span className="value">{details.timezone.name}</span>
+          <span className="value">{basicDetails.timezone.name}</span>
         </div>
       </div>
       <div className="infocard-details__wrapper">
         <div className="infocard-details">
           <span className="title">Vaccinations?</span>
-          <span className="value">{details.vaccinations}</span>
+          <p className="value">{vaccinationMarkup}</p>
         </div>{" "}
         <div className="infocard-details">
-          <span className="title">Average Temperature</span>
-          <span className="value">{details.weather.April.pAvg}</span>
+          <span className="title">This Month's Average Temperature</span>
+          <span className="value">{temperatureRate}°F</span>
         </div>{" "}
       </div>
       <div className="infocard-details__wrapper">
         <div className="infocard-details">
           <span className="title">Currency</span>
-          <span className="value">{details.currency.name}</span>
+          <span className="value">{basicDetails.currency.name}</span>
         </div>{" "}
         <div className="infocard-details">
           <span className="title">$1:</span>
           <span className="value">
-            {details.currency.rate}
-            {details.currency.code}
+            {conversionRate}
+            {basicDetails.currency.code}
           </span>
+        </div>
+      </div>
+      <div className="infocard-details__wrapper">
+        <div className="infocard-details">
+          <span className="title">Tap Water</span>
+          <span className="value"> {complexDetails.water} </span>
+        </div>{" "}
+        <div className="infocard-details">
+          <span className="title">Plug Type[s]</span>
+          <span className="value">{basicDetails.plugs}</span>
         </div>
       </div>
     </>
