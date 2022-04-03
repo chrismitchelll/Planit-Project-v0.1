@@ -8,6 +8,7 @@
 #logoIcon {
   padding-left: 1rem;
   padding-right: 1rem;
+  width: 10rem;
 }
 
 #userIcon {
@@ -22,8 +23,9 @@
 
 //------Header------//
 .header {
-  background-color: rgb(00, 200, 90);
-  color: white;
+  color: rgb(00, 200, 90);
+  background-color: var(--primary-color);
+  border-bottom: 5px solid rgb(00, 200, 90);
   height: 10vh;
   width: 100%;
   display: flex;

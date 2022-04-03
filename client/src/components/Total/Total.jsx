@@ -1,12 +1,17 @@
 import React from "react";
+import Confirm from "../../components/Buttons/ConfirmButton/Confirm";
 import Budget from "../../assets/icons/budget/budget.png";
 import Weather from "../../assets/icons/sun.png";
+import "./total.scss";
 
 export default function Total({
   basicDetails,
   complexDetails,
   currency,
   setCurrency,
+  noOfPeople,
+  days,
+  month,
 }) {
   // state = {
   //   currency: null,
@@ -18,50 +23,32 @@ export default function Total({
       complexDetails.meals +
       complexDetails.transportation +
       complexDetails.alcohol) *
-    7
+    days *
+    noOfPeople
   ).toFixed(0);
 
   const temperatureRate = (
-    Math.round(basicDetails.weather.April.pAvg * 100) / 100
+    Math.round(basicDetails.weather.April.tAvg * 100) / 100
   ).toFixed(1);
 
   const conversionRate = (
     Math.round(basicDetails.currency.rate * 100) / 100
   ).toFixed(2);
 
-  //function to set state of currency to 'euros' on click
-
-  //   const months = [
-  //     "January",
-  //     "February",
-  //     "March",
-  //     "April",
-  //     "May",
-  //     "June",
-  //     "July",
-  //     "August",
-  //     "September",
-  //     "October",
-  //     "November",
-  //     "December",
-  //   ];
-
-  //   const monthsMarkup = months.map;
-
   return (
     <>
       {" "}
-      <div className="infocard-details__wrapper">
-        <div className="budgetcard-details">
-          <img src={Budget} alt="budget-icon" id="budget-icon" />
-          <span className="title">Estimated Trip Cost:</span>
-          <span>
-            {basicDetails.currency.code}
-            {budgetCalculator}
-          </span>
-        </div>
-        <div className="infocard-details__wrapper">
-          Converter
+      <div className="content-wrapper">
+        <div className="infocard-details__wrapper" id="total">
+          <div className="card-details">
+            <img src={Budget} alt="budget-icon" id="budget-icon" />
+            <span className="title">Estimated Trip Cost:</span>
+            <span>
+              {basicDetails.currency.code}
+              {budgetCalculator}
+            </span>
+          </div>
+
           <div className="infocard-details">
             <button value="gbp" onClick={setCurrency}>
               £
@@ -77,11 +64,14 @@ export default function Total({
               {conversionRate}, {basicDetails.currency.code}
             </span>
           </div>
+          <div className="card-details">
+            <img src={Weather} alt="weather-icon" id="budget-icon" />
+            <span className="title">Temperature Estimate</span>
+            <span className="value">{temperatureRate}°C</span>
+          </div>
         </div>
-        <div className="budgetcard-details">
-          <img src={Weather} alt="weather-icon" id="budget-icon" />
-          <span className="title">Weather Estimate</span>
-          <span className="value">{temperatureRate}°F</span>
+        <div className="card-details">
+          <div className="confirm-button">Confirm</div>
         </div>
       </div>
     </>

@@ -3,6 +3,8 @@ import "./home.scss";
 import axios from "axios";
 import Selector from "../../components/Selector/Selector";
 import Details from "../../components/Details/Details";
+import MoreDetails from "../../components/Details/MoreDetails";
+import EvenMoreDetails from "../../components/Details/EvenMoreDetails";
 import Weather from "../../components/Weather/Weather";
 import Inspire from "../../components/Buttons/InspireButton/Inspire";
 
@@ -64,7 +66,9 @@ export default class Home extends Component {
     return (
       <>
         <div className="page">
-          <h2>Where Are You Going? </h2>
+          <div className="section-header">
+            <h2>Where Are You Going? </h2>
+          </div>
           <div className="content-wrapper">
             <div className="country-selector">
               <Selector
@@ -73,8 +77,14 @@ export default class Home extends Component {
                 handleRandomCountry={this.handleRandomCountry}
                 confirmSelectedCountry={this.confirmSelectedCountry}
               />
-              <Inspire />
+              {/* <Inspire /> */}
             </div>
+            {!this.state.basicCountryDetails &&
+              !this.state.complexCountryDetails && (
+                <div className="infocard-details__wrapper">
+                  <div className="filler-card" id="flag"></div>
+                </div>
+              )}
             {this.state.basicCountryDetails &&
               this.state.complexCountryDetails && (
                 <Details
@@ -86,14 +96,32 @@ export default class Home extends Component {
               )}
           </div>
 
-          {/* {this.state.basicCountryDetails && (
+          {this.state.basicCountryDetails &&
+            this.state.complexCountryDetails && (
+              <MoreDetails
+                basicDetails={this.state.basicCountryDetails}
+                complexDetails={this.state.complexCountryDetails}
+                chosenCountry={this.state.country}
+                handleSelectedCountry={this.handleSelectedCountry}
+              />
+            )}
+          {this.state.basicCountryDetails &&
+            this.state.complexCountryDetails && (
+              <EvenMoreDetails
+                basicDetails={this.state.basicCountryDetails}
+                complexDetails={this.state.complexCountryDetails}
+                chosenCountry={this.state.country}
+                handleSelectedCountry={this.handleSelectedCountry}
+              />
+            )}
+
+          {this.state.basicCountryDetails && (
             <Weather
               details={this.state.basicCountryDetails}
               chosenCountry={this.state.country}
               handleSelectedCountry={this.handleSelectedCountry}
             />
-          )} */}
-          {/* <div className="next-button">Next</div> */}
+          )}
         </div>
       </>
     );

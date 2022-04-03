@@ -15,6 +15,11 @@ export class Landing extends Component {
 
           <div className="landing-card">
             <h1>Welcome</h1>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+              consequatur repellat, porro quae distinctio natus qui dolor. At,
+              neque tempore.
+            </p>
             <Link to="/">
               <div className="next-button">Enter</div>
             </Link>

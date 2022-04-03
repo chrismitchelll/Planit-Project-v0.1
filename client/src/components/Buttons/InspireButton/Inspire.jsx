@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import "./inspire.scss";
 
-export default function Selector({
-  handleSelectedCountry,
-  handleRandomCountry,
-  confirmSelectedCountry,
-  chosenCountry,
-}) {
+export default function SelectorBtn({ handleRandomCountry }) {
   return (
     <>
       <div className="country-selector">
@@ -14,7 +9,6 @@ export default function Selector({
         <div className="confirm-button" onClick={handleRandomCountry}>
           Inspire Me
         </div>
-        {/* <div className="next-button">Inspire Me</div> */}
       </div>
     </>
   );

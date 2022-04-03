@@ -28,7 +28,7 @@ export default function Details({
   return (
     <>
       <div className="infocard-details__wrapper">
-        <div className="budgetcard-details__main">
+        <div className="card-details__main">
           <img src={Week} alt="weekly-icon" id="budget-icon" />
           <span className="title">Weekly Budget</span>
           <span className="value">
@@ -38,7 +38,7 @@ export default function Details({
         </div>
       </div>
       <div className="infocard-details__wrapper">
-        <div className="budgetcard-details">
+        <div className="card-details">
           <img src={Calculator} alt="weekly-icon" id="budget-icon" />
           <span className="title">Daily Budget Estimate</span>
           <span className="value">
@@ -46,7 +46,7 @@ export default function Details({
             {complexDetails.daily}
           </span>
         </div>
-        <div className="budgetcard-details">
+        <div className="card-details">
           <img src={Transport} alt="weekly-icon" id="budget-icon" />
           <span className="title">Transportation Cost</span>
           <span className="value">
@@ -56,7 +56,7 @@ export default function Details({
         </div>
       </div>
       <div className="infocard-details__wrapper">
-        <div className="budgetcard-details">
+        <div className="card-details">
           <img src={Bed} alt="accomodation-icon" id="budget-icon" />
           <span className="title">Accomodation Cost</span>
           <span className="value">
@@ -64,7 +64,7 @@ export default function Details({
             {complexDetails.hotel}
           </span>
         </div>{" "}
-        <div className="budgetcard-details">
+        <div className="card-details">
           <img src={Theatre} alt="entertainment-icon" id="budget-icon" />
           <span className="title">Entertainment Cost</span>
           <span className="value">
@@ -74,7 +74,7 @@ export default function Details({
         </div>
       </div>
       <div className="infocard-details__wrapper">
-        <div className="budgetcard-details">
+        <div className="card-details">
           <img src={Food} alt="meals-icon" id="budget-icon" />
           <span className="title">Meals Cost</span>
           <span className="value">
@@ -82,7 +82,7 @@ export default function Details({
             {complexDetails.meals}
           </span>
         </div>{" "}
-        <div className="budgetcard-details">
+        <div className="card-details">
           <img src={Booze} alt="Drinks-icon" id="budget-icon" />
           <span className="title">Drinks Cost</span>
           <span className="value">
@@ -92,7 +92,7 @@ export default function Details({
         </div>{" "}
       </div>
       <div className="infocard-details__wrapper">
-        <div className="budgetcard-details">
+        <div className="card-details">
           <img src={BigMac} alt="bigmac-icon" id="budget-icon" />
           <span className="title">A Big Mac Costs:</span>
           <span className="value">${complexDetails.bigmac}</span>
@@ -102,7 +102,7 @@ export default function Details({
           factors. If the price of a Big Mac low then we can say that the prices
           in the country are low, even if the high prices are relatively high. */}
         </div>{" "}
-        <div className="budgetcard-details">
+        <div className="card-details">
           <img src={Beer} alt="beer-icon" id="budget-icon" />
           <span className="title">0.5L of Beer Costs:</span>
           <span className="value">${complexDetails.beer}</span>

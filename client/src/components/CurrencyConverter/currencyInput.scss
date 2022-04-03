@@ -1,0 +1,31 @@
+.currency-converter {
+  display: flex;
+  grid-template-columns: 8rem 4rem;
+  border-radius: 1rem;
+  // border: 2px solid black;
+  border-radius: 5px;
+  justify-content: center;
+}
+input,
+select {
+  background: var(--primary-color);
+  border: 0;
+  color: var(--secondary-color);
+}
+input {
+  padding-left: 1rem;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.currency-converter select {
+  padding-right: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.currency-select {
+  width: 5rem;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 5px;
+}

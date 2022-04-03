@@ -219,10 +219,12 @@ export default function Converter() {
 
         <div id="finalAmount" class="text-center">
           {/* <!-- Display the converted amount --> */}
-          <h2>
-            Converted Amount :
-            <span class="finalValue" style="color:green;"></span>
-          </h2>
+          <div className="section-header">
+            <h2>
+              Converted Amount :
+              <span class="finalValue" style="color:green;"></span>
+            </h2>{" "}
+          </div>
         </div>
       </div>
     </div>

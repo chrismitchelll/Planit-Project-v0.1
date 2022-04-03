@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Confirm from "../../components/Buttons/ConfirmButton/Confirm";
 import "./selector.scss";
 
 export default function Selector({
@@ -16,7 +17,7 @@ export default function Selector({
         onChange={handleSelectedCountry}
         value={chosenCountry}
       >
-        <option value="-">Choose A Destination</option>
+        <option value="-">Choose a Destination</option>
         <option value="AT">🇦🇹 Austria</option>
         <option value="BE">🇧🇪 Belgium</option>
         {/* <option value="Bulgaria">🇧🇬 Bulgaria</option> NOT ADDED */}
@@ -56,10 +57,7 @@ export default function Selector({
             🇺🇸 United States of America
           </option> */}
       </select>
-      <div className="confirm-button" onClick={confirmSelectedCountry}>
-        {" "}
-        Confirm
-      </div>
+      {/* <Confirm confirmSelectedCountry={this.confirmSelectedCountry} /> */}
     </>
   );
 }

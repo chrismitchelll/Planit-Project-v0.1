@@ -1,5 +1,7 @@
 import React from "react";
 import "./weather.scss";
+import WeatherIcon from "../../assets/icons/sun.png";
+import UmbrellaIcon from "../../assets/icons/umbrella.png";
 
 export default function Weather({
   handleSelectedCountry,
@@ -7,118 +9,79 @@ export default function Weather({
   details,
   chosenCountryFlag,
 }) {
-  const temperatureRate = (
-    Math.round(details.weather.January.pAvg * 100) / 100
-  ).toFixed(1);
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
-  const temperatureRate1 = (
-    Math.round(details.weather.February.pAvg * 100) / 100
-  ).toFixed(1);
+  //mapping months into each variable
+  const monthsMap = months.map((month) => {
+    return {
+      month: month,
+      avgTemp: Math.round(details.weather[month].tAvg).toFixed(0),
+      minTemp: Math.round(details.weather[month].tMin).toFixed(0),
+      maxTemp: Math.round(details.weather[month].tMax).toFixed(0),
+      avgRain: Math.round(details.weather[month].pAvg).toFixed(0),
+      minRain: Math.round(details.weather[month].pMin).toFixed(0),
+      maxRain: Math.round(details.weather[month].pMax).toFixed(0),
+    };
+  });
 
-  const temperatureRate2 = (
-    Math.round(details.weather.March.pAvg * 100) / 100
-  ).toFixed(1);
-
-  const temperatureRate3 = (
-    Math.round(details.weather.April.pAvg * 100) / 100
-  ).toFixed(1);
-
-  const temperatureRate4 = (
-    Math.round(details.weather.May.pAvg * 100) / 100
-  ).toFixed(1);
-
-  const temperatureRate5 = (
-    Math.round(details.weather.June.pAvg * 100) / 100
-  ).toFixed(1);
-
-  const temperatureRate6 = (
-    Math.round(details.weather.July.pAvg * 100) / 100
-  ).toFixed(1);
-
-  const temperatureRate7 = (
-    Math.round(details.weather.August.pAvg * 100) / 100
-  ).toFixed(1);
-
-  const temperatureRate8 = (
-    Math.round(details.weather.September.pAvg * 100) / 100
-  ).toFixed(1);
-
-  const temperatureRate9 = (
-    Math.round(details.weather.October.pAvg * 100) / 100
-  ).toFixed(1);
-
-  const temperatureRate10 = (
-    Math.round(details.weather.November.pAvg * 100) / 100
-  ).toFixed(1);
-
-  const temperatureRate11 = (
-    Math.round(details.weather.December.pAvg * 100) / 100
-  ).toFixed(1);
-
-  //create an array with each month of the year
-  // for each array item, create a span with the month name and the average temperature
+  //mapping variables on forecast parameter
+  const weatherElements = monthsMap.map((forecast) => {
+    return (
+      <div className="infocard-details__wrapper">
+        <div className="infocard-details weatherCard">
+          <span className="title">
+            <h4>{forecast.month}</h4>
+          </span>
+          <span className="value">Temperature</span>
+          <span className="value">Average: {forecast.avgTemp}°C</span>
+          <span className="value">Highs: {forecast.maxTemp}°C</span>
+          <span className="value">Lows: {forecast.minTemp}°C</span>
+          <div></div>
+          <span className="title">Rainfall</span>
+          <span className="value">Average: {forecast.avgRain}mm</span>
+          <span classNmae="value">Highs: {forecast.maxRain}mm</span>
+          <span className="value">Lows: {forecast.minRain} mm</span>
+        </div>
+      </div>
+    );
+  });
 
   return (
     <>
-      <div className="infocard-details__wrapper">
-        <div className="infocard-details">
-          <span className="title">January Average Temperature</span>
-          <span className="value">{temperatureRate}°F</span>
-        </div>{" "}
-        <div className="infocard-details">
-          <span className="title">February Average Temperature</span>
-          <span className="value">{temperatureRate1}°F</span>
-        </div>{" "}
+      <div className="section-header">
+        <h2>Forecast</h2>
       </div>
-      <div className="infocard-details__wrapper">
-        <div className="infocard-details">
-          <span className="title">March Average Temperature</span>
-          <span className="value">{temperatureRate1}°F</span>
-        </div>{" "}
-        <div className="infocard-details">
-          <span className="title">April Average Temperature</span>
-          <span className="value">{temperatureRate3}°F</span>
-        </div>{" "}
-      </div>
-      <div className="infocard-details__wrapper">
-        <div className="infocard-details">
-          <span className="title">May Average Temperature</span>
-          <span className="value">{temperatureRate4}°F</span>
-        </div>{" "}
-        <div className="infocard-details">
-          <span className="title">June Average Temperature</span>
-          <span className="value">{temperatureRate5}°F</span>
-        </div>{" "}
-      </div>
-      <div className="infocard-details__wrapper">
-        <div className="infocard-details">
-          <span className="title">July Average Temperature</span>
-          <span className="value">{temperatureRate6}°F</span>
-        </div>{" "}
-        <div className="infocard-details">
-          <span className="title">August Average Temperature</span>
-          <span className="value">{temperatureRate7}°F</span>
-        </div>{" "}
-      </div>
-      <div className="infocard-details__wrapper">
-        <div className="infocard-details">
-          <span className="title">September Average Temperature</span>
-          <span className="value">{temperatureRate8}°F</span>
-        </div>{" "}
-        <div className="infocard-details">
-          <span className="title">October Average Temperature</span>
-          <span className="value">{temperatureRate9}°F</span>
-        </div>{" "}
-      </div>
-      <div className="infocard-details__wrapper">
-        <div className="infocard-details">
-          <span className="title">November Average Temperature</span>
-          <span className="value">{temperatureRate10}°F</span>
-        </div>{" "}
-        <div className="infocard-details">
-          <span className="title">December Average Temperature</span>
-          <span className="value">{temperatureRate11}°F</span>
+      <div className="content-wrapper">
+        <div className="country-selector">
+          {" "}
+          <div className="card-details__main">
+            <span className="title">
+              <h3>Forecast Data</h3>
+            </span>
+            <img src={WeatherIcon} alt="weekly-icon" id="budget-icon" />
+            <span className="title">Temperature Data</span>
+            <img src={UmbrellaIcon} alt="rain-icon" id="budget-icon" />
+            <span className="title">Expected Rainfall</span>
+            <span className="value">
+              {/* {basicDetails.currency.code}
+            {weeklyCost} */}
+            </span>
+          </div>
         </div>
+        {weatherElements};
       </div>
     </>
   );

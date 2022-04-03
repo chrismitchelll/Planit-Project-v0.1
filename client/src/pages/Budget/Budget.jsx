@@ -3,6 +3,8 @@ import Selector from "../../components/Selector/Selector";
 import Costs from "../../components/Costs/Costs";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Itineary from "../../components/Itineary/Itineary";
+import Tips from "./Tips/BudgetTips";
 import BYT from "../../assets/bytlogo.png";
 
 import "./budget.scss";
@@ -71,7 +73,9 @@ export default class Budget extends Component {
         <Header />
 
         <div className="page">
-          <h2>Budget </h2>
+          <div className="section-header">
+            <h2>Budget </h2>
+          </div>
           <div className="budget-overview">
             <p>
               Calculating a budget for a trip can be complicated. Here are some
@@ -94,6 +98,12 @@ export default class Budget extends Component {
                 />
               )}
             </div>
+            {!this.state.basicCountryDetails &&
+              !this.state.complexCountryDetails && (
+                <div className="infocard-details__wrapper">
+                  <div className="filler-card" id="flag"></div>
+                </div>
+              )}
             {this.state.basicCountryDetails &&
               this.state.complexCountryDetails && (
                 <Costs
@@ -102,9 +112,13 @@ export default class Budget extends Component {
                   handleSelectedCountry={this.handleSelectedCountry}
                 />
               )}
-          </div>
-          <div className="next-button">Next</div>
+          </div>{" "}
         </div>
+        <div className="page" id="sub-page">
+          <Tips />
+        </div>
+        <div className="page">{/* <Itineary /> */}</div>
+
         <Footer />
       </>
     );

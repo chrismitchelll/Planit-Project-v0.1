@@ -16,11 +16,15 @@ export class About extends Component {
         <div className="about">
           <h1>About This Website</h1>
           <div className="section-right">
-            <h2>Tech Stack</h2>
+            <div className="section-header">
+              <h2>Tech Stack</h2>
+            </div>
             This website was built using:
             <img src={techStack} alt="techstack" id="tech-stack" />
           </div>
-          <h2>About The Author</h2>{" "}
+          <div className="section-header">
+            <h2>About The Author</h2>{" "}
+          </div>
           <div className="section-left">
             <img src={author} alt="author" id="author" />
             <ul className="about-links">

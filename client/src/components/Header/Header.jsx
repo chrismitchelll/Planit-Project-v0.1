@@ -20,15 +20,27 @@ export default function Darkmode({}) {
       setIcon(0);
     }
   }
+
+  let scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <div className="header">
         <div className="header__left">
-          <img src={logoIcon} id="logoIcon" alt="logo" />
-          <h2>Planit</h2>
+          <Link to={`/`}>
+            {" "}
+            <img src={logoIcon} onClick={scrollUp()} id="logoIcon" alt="logo" />
+            {/* <a href="/">Main</a> */}
+          </Link>
         </div>
         <div className="header__middle">
-          <h2>Homepage</h2>
+          {/* <div className="section-header"><h2>Homepage</h2></div> */}
           <div className="dropdown">
             <button className="dropbtn">Dropdown</button>
             <div className="dropdown-content">

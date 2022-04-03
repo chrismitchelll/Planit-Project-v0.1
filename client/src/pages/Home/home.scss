@@ -2,27 +2,29 @@
 
 //----Night Mode-----//
 
+body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
 :root {
   --primary-color: rgba(245, 245, 245, 0.5);
   --secondary-color: #212121;
+  --tertiary-color: rgba(216, 216, 216, 0.5);
 }
 
 .dark-theme {
-  --primary-color: #242527;
-  --secondary-color: #fff;
+  --primary-color: rgb(37, 37, 37);
+  --secondary-color: rgb(255, 255, 255);
+  --tertiary-color: rgb(57, 57, 57);
 }
 
 .page {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   background-color: var(--primary-color);
   color: var(--secondary-color);
   padding-left: 8rem;
   padding-right: 8rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-bottom: 2rem;
-  height: 80vh;
 }
 
 select {
@@ -34,6 +36,11 @@ select {
   flex-direction: row;
   border: black 2px solid;
   border-radius: 5px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.192);
+  backdrop-filter: blur(1px);
+  border-radius: 15px;
 }
 
 .flag {
@@ -51,11 +58,23 @@ select {
   justify-content: center;
 }
 
-// .country-selector,
-// .infocard-details {
-// width: 100%;
-// height: 50vh;
-// }
+.section-header {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  /*  leverage cascade for cross-browser gradients  */
+  background: radial-gradient(hsl(100 100% 40%), hsl(200 100% 40%)) fixed;
+  background: conic-gradient(
+      hsl(100 100% 40%),
+      var(--secondary-color),
+      hsl(100 100% 40%)
+    )
+    fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
 
 .next-button,
 .confirm-button,
@@ -86,4 +105,22 @@ select {
 
 .next-button:hover {
   opacity: 0.8;
+}
+
+// /* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  // background: greenyellow;
+  border-radius: 10px;
 }
