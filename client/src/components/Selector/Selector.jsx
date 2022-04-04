@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import Confirm from "../../components/Buttons/ConfirmButton/Confirm";
+import Confirm from "../Buttons/ConfirmButton/Confirm";
 import "./selector.scss";
 
 export default function Selector({
   handleSelectedCountry,
   confirmSelectedCountry,
   chosenCountry,
+  handleSelectedBudget,
+  budgetLevel,
 }) {
   return (
     <>

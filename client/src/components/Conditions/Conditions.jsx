@@ -19,7 +19,7 @@ export default function Conditions({ setNumber, setDays, setMonth }) {
 
   return (
     <>
-      <div className="plan-wrapper">
+      <div className="plan__wrapper">
         <p>
           <h5>For How Many Days?</h5>
           <select onChange={setDays}>

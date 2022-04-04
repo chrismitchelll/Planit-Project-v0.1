@@ -1,16 +1,38 @@
 import React, { Component } from "react";
-import EditIntineary from "./EditItineary";
+import { Route } from "react-router-dom";
+import ShowItineary from "./ShowItineary";
+import EditTrip from "./Edit/EditTrip";
+import "./itineary.scss";
 
-export default class Intineary extends Component {
-  render() {
-    return (
-      <div className="liftoff">
-        Test
-        <EditIntineary
-        // history={this.props.history}
-        // match={this.props.match}
+const Intineary = ({ trips, getData }) => {
+  console.log(trips);
+  trips.map((trips) => {
+    return <ShowItineary trips={trips} />;
+  });
+
+  return (
+    <>
+      <div className="testbox">
+        <h2>Current Trips</h2>
+
+        <Route
+          // path="/warehouses/edit/:warehouseId"
+          render={(routerProps) => <EditTrip {...routerProps} />}
         />
+
+        <h2>Current Trips</h2>
+        {trips.map((tripsObject) => {
+          return (
+            <ShowItineary
+              getData={getData}
+              trips={tripsObject}
+              key={tripsObject.id}
+            />
+          );
+        })}
       </div>
-    );
-  }
-}
+    </>
+  );
+};
+
+export default Intineary;

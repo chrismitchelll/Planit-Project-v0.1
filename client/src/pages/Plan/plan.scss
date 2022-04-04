@@ -1,4 +1,10 @@
-.plan-wrapper {
+.plan__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plan__card {
   display: flex;
   flex-direction: column;
   align-items: center;

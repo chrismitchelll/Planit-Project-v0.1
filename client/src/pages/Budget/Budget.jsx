@@ -1,5 +1,6 @@
 import React, { useState, Component } from "react";
 import Selector from "../../components/Selector/Selector";
+import Budgeter from "../../components/Budgeter/Budgeter";
 import Costs from "../../components/Costs/Costs";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -59,6 +60,11 @@ export default class Budget extends Component {
     this.loadBasicCountryDetails(event.target.value);
   };
 
+  handleSelectedBudget = (event) => {
+    console.log(event.target.value);
+    this.setState({ basicCountryDetails: event.data });
+  };
+
   // setState to a random item in from an array of countries
   handleRandomCountry = () => {
     this.setState({
@@ -97,6 +103,13 @@ export default class Budget extends Component {
                   handleSelectedCountry={this.handleSelectedCountry}
                 />
               )}
+
+              {this.state.countries && (
+                <Budgeter
+                  budget={this.state.budgetLevel}
+                  handleSelectedBudget={this.handleSelectedBudget}
+                />
+              )}
             </div>
             {!this.state.basicCountryDetails &&
               !this.state.complexCountryDetails && (
@@ -110,6 +123,7 @@ export default class Budget extends Component {
                   basicDetails={this.state.basicCountryDetails}
                   complexDetails={this.state.complexCountryDetails}
                   handleSelectedCountry={this.handleSelectedCountry}
+                  budget={this.state.budgetLevel}
                 />
               )}
           </div>{" "}

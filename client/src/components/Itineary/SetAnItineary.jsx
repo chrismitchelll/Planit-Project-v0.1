@@ -2,13 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-export default class EditItinearyItem extends Component {
+export default class SetAnItineary extends Component {
   state = {
-    itemName: "",
-    description: "",
-    category: "",
-    status: "",
-    quantity: "",
+    trips: this.props.trips,
     warehouse: null,
     formValid: true,
     warehouseData: null,
@@ -20,7 +16,12 @@ export default class EditItinearyItem extends Component {
     Drinks: "",
     Accomodation: "",
     Expenses: "",
+    Unassigned: "",
   };
+
+  componentDidMount() {
+    console.log(this.props.trips);
+  }
 
   // getItinearyItem = () => {
   //   axios
@@ -152,7 +153,7 @@ export default class EditItinearyItem extends Component {
     });
 
     const budgetCriteria = toBudgetForMap.map((cost) => {
-      console.log(cost);
+      // console.log(cost);
 
       return (
         <div>
@@ -176,13 +177,13 @@ export default class EditItinearyItem extends Component {
     return (
       <div className="page" id="plan">
         <div className="content-wrapper">
-          <div className="plan-wrapper">
+          <div className="plan__wrapper">
             <div className="edit-itineary">
               <h1 className="edit-itineary__header">
                 <Link to={"/itineary"} className="edit-itineary__back">
                   {/* <img src={arrow} alt="" /> */}
                 </Link>
-                Edit Itineary
+                Track Your Trip
               </h1>
               <form
                 name="editItineary"
@@ -365,7 +366,7 @@ export default class EditItinearyItem extends Component {
                 <ValidationMessage message={"Warehouse Required"} />
               )} */}
                 </div>
-                <div className="plan-wrapper">
+                <div className="plan__wrapper">
                   Costs<br></br>
                   {budgetCriteria}
                 </div>

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./footer.scss";
 import Home from "../../assets/icons/taskbar/home.png";
 import Wallet from "../../assets/icons/taskbar/wallet.png";
+import Holiday from "../../assets/icons/taskbar/holidays.png";
 import Exchange from "../../assets/icons/taskbar/exchange.png";
 import List from "../../assets/icons/taskbar/list.png";
 import About from "../../assets/icons/taskbar/info.png";
@@ -42,6 +43,18 @@ export class Footer extends Component {
                   alt="home-icon"
                   id="footer-icon"
                 />
+                <a href="/">Home</a>
+              </li>
+            </Link>{" "}
+            <Link to={`/main`}>
+              <li className="footer__list--li">
+                {" "}
+                <img
+                  src={Holiday}
+                  onClick={scrollUp()}
+                  alt="home-icon"
+                  id="footer-icon"
+                />
                 <a href="/">Main</a>
               </li>
             </Link>
@@ -55,18 +68,6 @@ export class Footer extends Component {
                   id="footer-icon"
                 />
                 <a href="/">Budget</a>
-              </li>
-            </Link>{" "}
-            <Link to={`/tools`}>
-              <li className="footer__list--li">
-                {" "}
-                <img
-                  src={Exchange}
-                  onClick={scrollUp()}
-                  alt="home-icon"
-                  id="footer-icon"
-                />
-                <a href="/">Tools</a>
               </li>
             </Link>{" "}
             <Link to={`/plan`}>

@@ -1,151 +1,59 @@
-import React, { useState, Component } from "react";
-import "./home.scss";
+import React, { Component } from "react";
 import axios from "axios";
-import Selector from "../../components/Selector/Selector";
-import Details from "../../components/Details/Details";
-import MoreDetails from "../../components/Details/MoreDetails";
-import EvenMoreDetails from "../../components/Details/EvenMoreDetails";
-import Weather from "../../components/Weather/Weather";
-import Inspire from "../../components/Buttons/InspireButton/Inspire";
-
-export default class Home extends Component {
+import Main from "../../pages/Main/Main";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import logoIcon from "../../assets/planit.png";
+export class Home extends Component {
   state = {
     countries: null,
-    complexCountryDetails: null,
-    basicCountryDetails: null,
   };
 
-  // componentDidMount() {
-  // }
+  componentDidMount() {
+    this.getAllBasicCountries();
+  }
 
-  loadComplexCountryDetails = (countryId) => {
+  getAllBasicCountries = () => {
     axios
-      .get(`http://localhost:8888/countries` + "/" + countryId)
+      .get(`https://travelbriefing.org/countries.json`)
       .then((response) => {
-        const loadedCountry = response.data;
-        this.setState({ complexCountryDetails: loadedCountry });
-        console.log(this.state.complexCountryDetails);
-      });
-  };
-
-  loadBasicCountryDetails = (countryCode) => {
-    axios
-      .get(`https://travelbriefing.org/` + `${countryCode}` + `?format=json`)
-      .then((response) => {
-        this.setState({ basicCountryDetails: response.data });
+        this.setState({ countries: response.data });
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
-  //could combine called functions into 1.
-  handleSelectedCountry = (event) => {
-    // this.setState({
-    //   complexCountryDetails: event.target.value,
-    //   basicCountryDetails: event.target.value,
-    // });
-    // console.log(
-    //   this.state.complexCountryDetails,
-    //   "and" + this.state.basicCountryDetails
-    // );
-    this.loadComplexCountryDetails(event.target.value);
-    this.loadBasicCountryDetails(event.target.value);
-  };
-
-  confirmSelectedCountry = (event) => {
-    const targetSelection = document.getElementsByClassName(
-      "country-selector__dropdown"
-    );
-    console.log(targetSelection);
-    this.loadComplexCountryDetails(targetSelection.value);
-    this.loadBasicCountryDetails(targetSelection.value);
+  getAllBudget = () => {
+    axios
+      .get(`http://localhost:8888/countries`)
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          budgetCountries: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   render() {
     return (
       <>
-        <div className="page">
-          <div className="section-header">
-            <h2>Where Are You Going? </h2>
-          </div>
-          <div className="content-wrapper">
-            <div className="country-selector">
-              <Selector
-                countries={this.state.countries}
-                handleSelectedCountry={this.handleSelectedCountry}
-                handleRandomCountry={this.handleRandomCountry}
-                confirmSelectedCountry={this.confirmSelectedCountry}
-              />
-              {/* <Inspire /> */}
-            </div>
-            {!this.state.basicCountryDetails &&
-              !this.state.complexCountryDetails && (
-                <div className="infocard-details__wrapper">
-                  <div className="filler-card" id="flag"></div>
-                </div>
-              )}
-            {this.state.basicCountryDetails &&
-              this.state.complexCountryDetails && (
-                <Details
-                  basicDetails={this.state.basicCountryDetails}
-                  complexDetails={this.state.complexCountryDetails}
-                  chosenCountry={this.state.country}
-                  handleSelectedCountry={this.handleSelectedCountry}
-                />
-              )}
-          </div>
-
-          {this.state.basicCountryDetails &&
-            this.state.complexCountryDetails && (
-              <MoreDetails
-                basicDetails={this.state.basicCountryDetails}
-                complexDetails={this.state.complexCountryDetails}
-                chosenCountry={this.state.country}
-                handleSelectedCountry={this.handleSelectedCountry}
-              />
-            )}
-          {this.state.basicCountryDetails &&
-            this.state.complexCountryDetails && (
-              <EvenMoreDetails
-                basicDetails={this.state.basicCountryDetails}
-                complexDetails={this.state.complexCountryDetails}
-                chosenCountry={this.state.country}
-                handleSelectedCountry={this.handleSelectedCountry}
-              />
-            )}
-
-          {this.state.basicCountryDetails && (
-            <Weather
-              details={this.state.basicCountryDetails}
-              chosenCountry={this.state.country}
-              handleSelectedCountry={this.handleSelectedCountry}
-            />
-          )}
-        </div>
+        <Header />
+        Home
+        <img src={logoIcon} alt="" srcset="" />
+        {/* {this.state.countries && (
+          <Main
+            getData={this.getAllBasicCountries}
+            basicCountries={this.state.countries}
+          />
+        )} */}
+        <Footer />
       </>
     );
   }
 }
 
-//-------Hooks---------//
-// const [setCountry] = useState(false);
-
-// console.log(this.state);
-
-//   handleChange(event) {
-//     let value = event.target.value;
-//     this.setState({
-//         disabled: value == '2'
-//     });
-// }
-
-// revealName() {
-//   // setCountry(countryOptions);
-//   // console.log("reveal name");
-// }
-
-// setCountry() {
-//   // setCountry(countryOptions);
-//   console.log(this.country.name);
-// }
+export default Main;

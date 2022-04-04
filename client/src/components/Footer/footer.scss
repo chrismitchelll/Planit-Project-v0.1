@@ -1,10 +1,12 @@
 .footer {
-  background-color: rgb(00, 200, 90, 0.3);
+  // background-color: rgb(00, 200, 90, 0.3);
+  background-color: darkgrey;
   justify-content: center;
   align-content: center;
   width: 100%;
   height: 10vh;
   display: flex;
+  border-top: 5px solid #00c85a;
 }
 .footer__list {
   width: 100%;

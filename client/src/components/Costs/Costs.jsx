@@ -14,14 +14,20 @@ export default function Details({
   handleSelectedCountry,
   basicDetails,
   complexDetails,
+  budget,
 }) {
   // multiply a number by 7 to get the weekly cost
+
+  const budgetToInt = parseInt(budget);
+  console.log(budget);
+
   const weeklyCost = (
     (complexDetails.daily +
       complexDetails.entertainment +
       complexDetails.meals +
       complexDetails.transportation +
       complexDetails.alcohol) *
+    // budgetToInt(budget) *
     7
   ).toFixed(0);
 

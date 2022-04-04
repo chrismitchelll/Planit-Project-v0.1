@@ -1,0 +1,28 @@
+[
+  {
+    "id": "2922c286-16cd-4d43-ab98-c79f698aeab0",
+    "name": "Trip to the Moon",
+    "address": "Space",
+    "city": "None",
+    "country": "None",
+    "contact": {
+      "name": "Neil Armstrong",
+      "position": "Astronaught",
+      "phone": "+1 (646) 123-1234",
+      "email": "neil@nasa.com"
+    }
+  },
+  {
+    "id": "c9b8f8e2-c1d6-4c1a-b9e9-f8e9a8e8e8e8",
+    "name": "Trip to Mars",
+    "address": "Space",
+    "city": "None",
+    "country": "None",
+    "contact": {
+      "name": "Elon Musk",
+      "position": "CEO",
+      "phone": "+1 (646) 123-1234",
+      "email": "elon@spacex.com"
+    }
+  }
+]

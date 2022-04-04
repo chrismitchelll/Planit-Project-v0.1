@@ -5,6 +5,7 @@ import sun from "../../assets/icons/dark-mode/sun.png";
 import moon from "../../assets/icons/dark-mode/moon.png";
 import userIcon from "../../assets/icons/user.png";
 import logoIcon from "../../assets/planit.png";
+import Exchange from "../../assets/icons/taskbar/exchange.png";
 
 const toggleMode = () => {
   document.body.classList.toggle("dark-theme");
@@ -66,6 +67,14 @@ export default function Darkmode({}) {
               alt="light-mode switch"
               onClick={toggleIcon}
             />
+            <Link to={`/tools`}>
+              <img
+                src={Exchange}
+                onClick={scrollUp()}
+                alt="home-icon"
+                id="userIcon"
+              />
+            </Link>{" "}
             <Link to={`/profile`}>
               <img src={userIcon} id="userIcon" alt="user-icon" />
             </Link>{" "}

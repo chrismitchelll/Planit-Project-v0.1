@@ -3,12 +3,14 @@ const app = express();
 const cors = require("cors");
 const PORT = process.env.PORT || 8888;
 const countryRoutes = require("./routes/countryRoutes");
+const tripRoutes = require("./routes/tripRoutes");
 require("dotenv").config();
 // const briefingRoutes = require("./routes/briefingRoutes");
 
 app.use(express.json());
 app.use(cors());
 app.use("/countries", countryRoutes);
+app.use("/trips", tripRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server Listening at http://localhost:${PORT}`);

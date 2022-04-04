@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./plan.scss";
 import Header from "../../components/Header/Header";
@@ -6,10 +7,11 @@ import Footer from "../../components/Footer/Footer";
 import Selector from "../../components/Selector/Selector";
 import Total from "../../components/Total/Total";
 import Conditions from "../../components/Conditions/Conditions";
-import EditInventoryItem from "../../components/Itineary/EditInventoryContainer";
+import Itineary from "../../components/Itineary/Itineary";
 
 export default class Plan extends Component {
   state = {
+    trips: null,
     countries: null,
     complexCountryDetails: null,
     basicCountryDetails: null,
@@ -20,8 +22,22 @@ export default class Plan extends Component {
 
   componentDidMount() {
     this.getAllBasicCountries();
-    console.log(this.state.noOfPeople);
+    this.getAllTrips();
   }
+
+  getAllTrips = () => {
+    axios
+      .get(`http://localhost:8888/trips`)
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          trips: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   loadComplexCountryDetails = (countryId) => {
     axios
@@ -88,7 +104,7 @@ export default class Plan extends Component {
         <Header />
         <div className="page" id="plan">
           <div className="content-wrapper">
-            <div className="plan-wrapper">
+            <div className="plan__wrapper">
               <h1>Plan</h1>
               {/* <Converter /> */}
               <div className="infocard-details__wrapper">
@@ -97,7 +113,7 @@ export default class Plan extends Component {
             </div>
             {!this.state.basicCountryDetails &&
               !this.state.complexCountryDetails && (
-                <div className="plan-wrapper"></div>
+                <div className="plan__wrapper"></div>
               )}
             {this.state.basicCountryDetails &&
               this.state.complexCountryDetails && (
@@ -110,7 +126,7 @@ export default class Plan extends Component {
             {!this.state.basicCountryDetails &&
               !this.state.complexCountryDetails &&
               !this.state.complexCountryDetails && (
-                <div className="plan-wrapper"></div>
+                <div className="plan__wrapper"> </div>
               )}
           </div>
           {this.state.days &&
@@ -125,8 +141,17 @@ export default class Plan extends Component {
                 complexDetails={this.state.complexCountryDetails}
               />
             )}
+
+          <div className="add-new">
+            <Link to={`/trips/add/`}>
+              <div>+ Add New Trip</div>{" "}
+            </Link>
+          </div>
         </div>
-        <EditInventoryItem />
+        {this.state.trips && (
+          <Itineary trips={this.state.trips} getData={this.getAllTrips} />
+        )}
+
         <Footer />
       </>
     );
