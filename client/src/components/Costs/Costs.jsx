@@ -17,19 +17,16 @@ export default function Details({
   budget,
 }) {
   // multiply a number by 7 to get the weekly cost
-
-  const budgetToInt = parseInt(budget);
-  console.log(budget);
-
-  const weeklyCost = (
-    (complexDetails.daily +
-      complexDetails.entertainment +
-      complexDetails.meals +
-      complexDetails.transportation +
-      complexDetails.alcohol) *
-    // budgetToInt(budget) *
-    7
-  ).toFixed(0);
+  const weeklyCost = // console.log(budget)
+    (
+      (complexDetails.daily +
+        complexDetails.entertainment +
+        complexDetails.meals +
+        complexDetails.transportation +
+        complexDetails.alcohol) *
+      budget *
+      7
+    ).toFixed(0);
 
   return (
     <>
@@ -54,7 +51,7 @@ export default function Details({
         </div>
         <div className="card-details">
           <img src={Transport} alt="weekly-icon" id="budget-icon" />
-          <span className="title">Transportation Cost</span>
+          <span className="title">Transportation Costs</span>
           <span className="value">
             {basicDetails.currency.code}
             {complexDetails.transportation}
@@ -64,7 +61,7 @@ export default function Details({
       <div className="infocard-details__wrapper">
         <div className="card-details">
           <img src={Bed} alt="accomodation-icon" id="budget-icon" />
-          <span className="title">Accomodation Cost</span>
+          <span className="title">Accomodation Costs</span>
           <span className="value">
             {basicDetails.currency.code}
             {complexDetails.hotel}
@@ -72,7 +69,7 @@ export default function Details({
         </div>{" "}
         <div className="card-details">
           <img src={Theatre} alt="entertainment-icon" id="budget-icon" />
-          <span className="title">Entertainment Cost</span>
+          <span className="title">Entertainment Costs</span>
           <span className="value">
             {basicDetails.currency.code}
             {complexDetails.entertainment}
@@ -82,7 +79,7 @@ export default function Details({
       <div className="infocard-details__wrapper">
         <div className="card-details">
           <img src={Food} alt="meals-icon" id="budget-icon" />
-          <span className="title">Meals Cost</span>
+          <span className="title">Meals Costs</span>
           <span className="value">
             {basicDetails.currency.code}
             {complexDetails.meals}
@@ -90,7 +87,7 @@ export default function Details({
         </div>{" "}
         <div className="card-details">
           <img src={Booze} alt="Drinks-icon" id="budget-icon" />
-          <span className="title">Drinks Cost</span>
+          <span className="title">Drinks Costs</span>
           <span className="value">
             {basicDetails.currency.code}
             {complexDetails.alcohol}

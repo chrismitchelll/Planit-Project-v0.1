@@ -6,6 +6,9 @@ import moon from "../../assets/icons/dark-mode/moon.png";
 import userIcon from "../../assets/icons/user.png";
 import logoIcon from "../../assets/planit.png";
 import Exchange from "../../assets/icons/taskbar/exchange.png";
+import Itineary from "../../assets/icons/navbar/itineary.png";
+import Budget from "../../assets/icons/navbar/budget.png";
+import Inform from "../../assets/icons/navbar/inform.png";
 
 const toggleMode = () => {
   document.body.classList.toggle("dark-theme");
@@ -36,18 +39,37 @@ export default function Darkmode({}) {
         <div className="header__left">
           <Link to={`/`}>
             {" "}
-            <img src={logoIcon} onClick={scrollUp()} id="logoIcon" alt="logo" />
+            <img src={logoIcon} onClick={scrollUp()} id="logoicon" alt="icon" />
             {/* <a href="/">Main</a> */}
           </Link>
         </div>
         <div className="header__middle">
           {/* <div className="section-header"><h2>Homepage</h2></div> */}
           <div className="dropdown">
-            <button className="dropbtn">Dropdown</button>
+            <button className="dropbtn">
+              {/* <img src={Inform} onClick={scrollUp()} id="dlicon" alt="icon" /> */}
+              <a href="/main">Learn</a>
+            </button>
+          </div>
+          <div className="dropdown">
+            <button className="dropbtn">
+              {/* <img src={Budget} onClick={scrollUp()} id="dlicon" alt="icon" />{" "} */}
+              <a href="/budget">Budget</a>
+            </button>
             <div className="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+              <a href="/budget">Plan A Trip</a>
+              <a href="/plans/trips/">Planned Trips</a>
+            </div>
+          </div>
+          <div className="dropdown">
+            <button className="dropbtn">
+              {" "}
+              {/* <img src={Itineary} onClick={scrollUp()} id="dlicon" alt="icon" /> */}
+              Plan
+            </button>
+            <div className="dropdown-content">
+              <a href="/plan">Plan A Trip</a>
+              <a href="/plan/trips">View Planned Trips</a>
             </div>
           </div>
         </div>
@@ -75,7 +97,7 @@ export default function Darkmode({}) {
                 id="userIcon"
               />
             </Link>{" "}
-            <Link to={`/profile`}>
+            <Link to={`/plan/trips`}>
               <img src={userIcon} id="userIcon" alt="user-icon" />
             </Link>{" "}
           </div>

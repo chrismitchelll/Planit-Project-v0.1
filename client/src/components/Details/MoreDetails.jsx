@@ -1,5 +1,13 @@
 import React from "react";
 import "../Details/details.scss";
+import Language from "../../assets/icons/main/language.png";
+import TapWater from "../../assets/icons/main/water.png";
+import Emergency from "../../assets/icons/main/emergency.png";
+import Socket from "../../assets/icons/main/socket.png";
+import Sun from "../../assets/icons/sun.png";
+import Vaccine from "../../assets/icons/main/vaccine.png";
+import Neighbours from "../../assets/icons/main/neighborhood.png";
+import Capital from "../../assets/icons/main/capital.png";
 
 export default function Details({ basicDetails, complexDetails }) {
   const conversionRate = (
@@ -23,6 +31,58 @@ export default function Details({ basicDetails, complexDetails }) {
       <p>No Vaccinations</p>
     );
 
+  const emergencyMarkup =
+    basicDetails.telephone.length > 0 ? (
+      basicDetails.telephone.map((phoneNumber) => {
+        console.log(phoneNumber);
+        return (
+          <>
+            <h5>Police</h5>
+            <p>{phoneNumber.police}</p>
+            <h5>Fire</h5>
+            <p>{phoneNumber.police}</p>
+            <h5>Ambulance</h5>
+            <p>{phoneNumber.police}</p>
+          </>
+        );
+      })
+    ) : (
+      <p>No Data Availible</p>
+    );
+
+  const languageMarkup =
+    basicDetails.language.length > 0 ? (
+      basicDetails.language.map((lan) => {
+        return (
+          <>
+            <h5>{lan.language}</h5>
+          </>
+        );
+      })
+    ) : (
+      <p>No Official Languages</p>
+    );
+
+  const neighboursMarkup =
+    basicDetails.neighbors.length > 0 ? (
+      basicDetails.neighbors.map((cou) => {
+        return (
+          <>
+            <h5>{cou.name}</h5>
+          </>
+        );
+      })
+    ) : (
+      <p>No Neighbouring Countries</p>
+    );
+
+  const plugsData = basicDetails.plugs
+    ? basicDetails.plugs
+    : "Currently Unknown";
+  const waterData = complexDetails.water
+    ? complexDetails.water
+    : "Unknown. Remain Cautious";
+
   return (
     <>
       <div className="section-header">
@@ -31,35 +91,58 @@ export default function Details({ basicDetails, complexDetails }) {
       <div className="content-wrapper">
         <div className="infocard-details__wrapper">
           <div className="infocard-details">
-            <span className="title">Vaccinations?</span>
-            <p className="value">{vaccinationMarkup}</p>
-          </div>{" "}
+            <img src={Capital} alt="capital-icon" id="main-icon" />
+            <span className="title">Capital City</span>
+
+            <span className="value">
+              {complexDetails.capital} ({basicDetails.names.iso2})
+            </span>
+          </div>
           <div className="infocard-details">
-            <span className="title">This Month's Average Temperature</span>
-            <span className="value">{temperatureRate}°C</span>
+            <img src={Language} alt="Language-icon" id="main-icon" />
+
+            <span className="title">Official Language</span>
+            <span className="value">{languageMarkup}</span>
           </div>{" "}
+          {/* <div className="infocard-details">
+          <span className="title">Timezone</span>
+          <span className="value">{basicDetails.timezone.name}</span>
+        </div> */}
         </div>
         <div className="infocard-details__wrapper">
           <div className="infocard-details">
-            <span className="title">Tap Water</span>
-            <span className="value"> {complexDetails.water} </span>
+            <img src={Emergency} alt="Emergency-icon" id="main-icon" />
+            <span className="title">Emergency Contacts</span>
+            <p className="value">{emergencyMarkup}</p>
           </div>{" "}
           <div className="infocard-details">
-            <span className="title">Plug Type[s]</span>
-            <span className="value">{basicDetails.plugs}</span>
+            <img src={Neighbours} alt="Neighbours-icon" id="main-icon" />
+            <span className="title">Neighbours</span>
+            <span>{neighboursMarkup}</span>
           </div>
         </div>
         <div className="infocard-details__wrapper">
           <div className="infocard-details">
-            <span className="title">Currency</span>
-            <span className="value">{basicDetails.currency.name}</span>
+            <img src={TapWater} alt="TapWater-icon" id="main-icon" />
+            <span className="title">Tap Water</span>
+            <span className="value"> {waterData} </span>
           </div>{" "}
           <div className="infocard-details">
-            <span className="title">$1:</span>
-            <span className="value">
-              {conversionRate}
-              {basicDetails.currency.code}
-            </span>
+            <img src={Vaccine} alt="Vaccine-icon" id="main-icon" />
+            <span className="title">Vaccinations?</span>
+            <p className="value">{vaccinationMarkup}</p>
+          </div>{" "}
+        </div>
+        <div className="infocard-details__wrapper">
+          <div className="infocard-details">
+            <img src={Sun} alt="Temp-icon" id="main-icon" />
+            <span className="title">This Month's Average Temperature</span>
+            <span className="value">{temperatureRate}°C</span>
+          </div>{" "}
+          <div className="infocard-details">
+            <img src={Socket} alt="Socket-icon" id="main-icon" />
+            <span className="title">Plug Type[s]</span>
+            <span className="value">{plugsData}</span>
           </div>
         </div>
       </div>

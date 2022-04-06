@@ -9,6 +9,7 @@ import Weather from "../../components/Weather/Weather";
 import Inspire from "../../components/Buttons/InspireButton/Inspire";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
+import Capital from "../../assets/icons/main/capital.png";
 
 export default class Home extends Component {
   state = {
@@ -72,7 +73,7 @@ export default class Home extends Component {
           <div className="section-header">
             <h2>Where Are You Going? </h2>
           </div>
-          <div className="content-wrapper">
+          <div className="content-wrapper" id="main-selector">
             <div className="country-selector">
               <Selector
                 countries={this.state.countries}
@@ -82,12 +83,12 @@ export default class Home extends Component {
               />
               {/* <Inspire /> */}
             </div>
-            {!this.state.basicCountryDetails &&
+            {/* {!this.state.basicCountryDetails &&
               !this.state.complexCountryDetails && (
                 <div className="infocard-details__wrapper">
                   <div className="filler-card" id="flag"></div>
                 </div>
-              )}
+              )} */}
             {this.state.basicCountryDetails &&
               this.state.complexCountryDetails && (
                 <Details

@@ -1,5 +1,6 @@
 .card-details,
-.card-details__main {
+.card-details__main,
+.card-details__blurb {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -12,6 +13,10 @@
   box-shadow: 0px 5px 5px -5px black;
   margin: 10px;
 
+  .card-details__blurb {
+    width: 20rem;
+  }
+
   &:hover {
     opacity: 0.8;
     transition: 0.35s ease-in-out;
@@ -21,4 +26,8 @@
     height: 100%;
     margin-top: 10px;
   }
+}
+
+.card-details {
+  height: 15rem;
 }

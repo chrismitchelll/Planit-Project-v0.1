@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-export default class AddNewInventory extends Component {
+export default class AddNewitineary extends Component {
   state = {
     // itemName: null,
     // description: null,
@@ -58,81 +58,128 @@ export default class AddNewInventory extends Component {
   };
 
   isFormValid = () => {
-    // if (
-    //   !this.state.itemName ||
-    //   !this.state.description ||
-    //   !this.state.category ||
-    //   !this.state.status ||
-    //   !this.state.warehouse ||
-    //   (this.state.quantity <= 0 && this.state.status === "In Stock") ||
-    //   (this.state.quantity > 0 && this.state.status === "Out Of Stock")
-    // ) {
-    //   console.log("invalid form");
-    //   return false;
-    // }
+    if (
+      !this.state.tripName ||
+      !this.state.tripDate ||
+      !this.state.tripCost ||
+      !this.state.tripDestination
+      // (this.state.quantity <= 0 && this.state.status === "In Stock") ||
+      // (this.state.quantity > 0 && this.state.status === "Out Of Stock")
+    ) {
+      console.log("invalid form");
+      alert("Please fill out all fields");
+      return false;
+    }
     console.log("valid form");
     return true;
   };
 
   handleSubmit = (event) => {
-    event.preventDefault(); // if (this.isFormValid())
-    axios
-      .post(`http://localhost:8888/trips`, {
-        id: "uuidv4",
-        name: "Trip to Mars",
-        cost: "$500,000,000,000",
-        date: "2029-04-01",
-        country: "None",
-        contact: {
-          name: "Elon Musk",
-          position: "CEO",
-          phone: "+1 (646) 123-1234",
-          email: "elon@spacex.com",
-        },
-      })
-      .then((response) => {
-        console.log(response);
-        event.target.reset();
-        this.resetState();
+    event.preventDefault();
+    if (this.isFormValid()) {
+      axios
+        .post(`http://localhost:8888/trips`, {
+          id: "uuidv4",
+          name: event.target.tripName.value,
+          cost: event.target.tripCost.value,
+          date: event.target.tripDate.value,
+          country: event.target.tripDestination.value,
+        })
+        .then((response) => {
+          console.log(response);
+          alert("Trip Added");
+          event.target.reset();
+          this.resetState();
+        });
+      this.setState({ formValid: false });
+    } else {
+      this.setState({
+        formValid: false,
       });
+    }
   };
 
   render() {
     return (
-      <div className="add-inventory">
-        <h1 className="add-inventory__header">
-          <Link to={"/inventory"} className="add-inventory__back">
-            <span>[Arrow]</span>
-          </Link>
-          Add New Trip
-        </h1>
+      <div className="add-itineary">
+        <Link to={"/plan"} className="add-itineary__back">
+          <span>[Arrow]</span>
+        </Link>
+
         <form
-          name="addInventory"
+          name="additineary"
           onSubmit={this.handleSubmit}
-          className="add-inventory__form"
+          className="add-itineary__form"
         >
-          <div className="add-inventory__form-elements">
-            <div className="add-inventory__item-info">
-              <h2 className="add-inventory__section-header">Item Details</h2>
-              <label>Item Name</label>
+          <div className="add-itineary__form-elements">
+            <div className="add-itineary__item-info">
+              <label>Trip Name</label>
+              <br></br>
               <input
                 onChange={this.handleChange}
                 className={`${
                   !this.state.itemName && !this.state.formValid
-                    ? "add-inventory__input--missing"
-                    : "add-inventory__input"
+                    ? "add-itineary__input--missing"
+                    : "add-itineary__input"
                 }`}
+                placeholder="Trip Name"
+                name="tripName"
+                autoComplete="off"
+              />
+            </div>
+            <div className="add-itineary__item-info">
+              <label>Destination</label>
+              <br></br>
+              <input
+                onChange={this.handleChange}
+                className={`${
+                  !this.state.itemName && !this.state.formValid
+                    ? "add-itineary__input--missing"
+                    : "add-itineary__input"
+                }`}
+                placeholder="Destination Name"
+                name="tripDestination"
+                autoComplete="off"
+              />
+            </div>
+            <div className="add-itineary__item-info">
+              <label>Estimated Trip Cost</label>
+              <br></br>
+              <input
+                onChange={this.handleChange}
+                className={`${
+                  !this.state.itemName && !this.state.formValid
+                    ? "add-itineary__input--missing"
+                    : "add-itineary__input"
+                }`}
+                placeholder="Estimate Your Trip Costs"
+                name="tripCost"
+                autoComplete="off"
+              />
+            </div>
+            <div className="add-itineary__item-info">
+              <label>Start Date</label>
+              <br></br>
+              <input
+                onChange={this.handleChange}
+                className={`${
+                  !this.state.itemName && !this.state.formValid
+                    ? "add-itineary__input--missing"
+                    : "add-itineary__input"
+                }`}
+                type="date"
                 placeholder="Item Name"
-                name="itemName"
+                name="tripDate"
+                min="2022 - 04 - 09"
               />
             </div>
           </div>
 
-          <div className="add-inventory__buttons">
-            <Link className="add-inventory__cancel-link" to="/inventory">
-              <button className="add-inventory__cancel">Cancel</button>
+          <div className="add-itineary__buttons">
+            <Link className="add-itineary__cancel-link" to="/plan/trips">
+              <button className="add-itineary__cancel">Cancel</button>
             </Link>
-            <button type="submit" className="add-inventory__add">
+            <button type="submit" className="add-itineary__add">
               +Add Item
             </button>
           </div>

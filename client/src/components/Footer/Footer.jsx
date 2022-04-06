@@ -4,8 +4,8 @@ import "./footer.scss";
 import Home from "../../assets/icons/taskbar/home.png";
 import Wallet from "../../assets/icons/taskbar/wallet.png";
 import Holiday from "../../assets/icons/taskbar/holidays.png";
-import Exchange from "../../assets/icons/taskbar/exchange.png";
 import List from "../../assets/icons/taskbar/list.png";
+import Task from "../../assets/icons/taskbar/task.png";
 import About from "../../assets/icons/taskbar/info.png";
 import Welcome from "../../assets/icons/taskbar/welcome.png";
 
@@ -23,18 +23,7 @@ export class Footer extends Component {
       <>
         <div className="footer">
           <ul className="footer__list">
-            <Link to={`/welcome`}>
-              <li className="footer__list--li">
-                <img
-                  src={Welcome}
-                  onClick={scrollUp()}
-                  alt="home-icon"
-                  id="footer-icon"
-                />
-                <a href="/">Landing</a>
-              </li>
-            </Link>
-            <Link to={`/`}>
+            <Link to={`/home`}>
               <li className="footer__list--li">
                 {" "}
                 <img
@@ -46,6 +35,17 @@ export class Footer extends Component {
                 <a href="/">Home</a>
               </li>
             </Link>{" "}
+            <Link to={`/welcome`}>
+              <li className="footer__list--li">
+                <img
+                  src={Welcome}
+                  onClick={scrollUp()}
+                  alt="home-icon"
+                  id="footer-icon"
+                />
+                <a href="/">Landing</a>
+              </li>
+            </Link>
             <Link to={`/main`}>
               <li className="footer__list--li">
                 {" "}
@@ -71,6 +71,18 @@ export class Footer extends Component {
               </li>
             </Link>{" "}
             <Link to={`/plan`}>
+              <li className="footer__list--li">
+                {" "}
+                <img
+                  src={Task}
+                  onClick={scrollUp()}
+                  alt="home-icon"
+                  id="footer-icon"
+                />
+                <a href="/">Plan</a>
+              </li>
+            </Link>{" "}
+            <Link to={`/plan/trips`}>
               <li className="footer__list--li">
                 {" "}
                 <img

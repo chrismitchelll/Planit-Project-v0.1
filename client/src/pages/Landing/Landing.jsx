@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 import "./landing.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import logoIcon from "../../assets/planit.png";
 
 export class Landing extends Component {
   render() {
     return (
       <>
-        {/* <Header /> */}
+        <Header />
 
-        <div className="page" id="welcome-page">
-          {/* <Converter /> */}
-
+        <div className="page welcome-page">
           <div className="landing-card">
-            <h1>Welcome</h1>
+            <img src={logoIcon} alt="" srcset="" />
+            {/* <h1>Welcome</h1> */}
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia
               consequatur repellat, porro quae distinctio natus qui dolor. At,
@@ -25,7 +25,7 @@ export class Landing extends Component {
             </Link>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </>
     );
   }

@@ -4,8 +4,7 @@ import Budgeter from "../../components/Budgeter/Budgeter";
 import Costs from "../../components/Costs/Costs";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import Itineary from "../../components/Itineary/Itineary";
-import Tips from "./Tips/BudgetTips";
+import Tips from "../../components/Tips/BudgetTips";
 import BYT from "../../assets/bytlogo.png";
 
 import "./budget.scss";
@@ -16,11 +15,26 @@ export default class Budget extends Component {
     countries: null,
     complexCountryDetails: null,
     basicCountryDetails: null,
+    budgetLevel: null,
   };
 
   componentDidMount() {
     this.getAllBasicCountries();
+    this.getAllTrips();
   }
+
+  getAllTrips = () => {
+    axios
+      .get(`http://localhost:8888/trips`)
+      .then((response) => {
+        this.setState({
+          trips: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   loadComplexCountryDetails = (countryId) => {
     axios
@@ -54,23 +68,16 @@ export default class Budget extends Component {
       });
   };
 
+  handleSelectedBudget = (event) => {
+    const budgetNumber = parseFloat(event.target.value);
+    this.setState({ budgetLevel: budgetNumber });
+    console.log(budgetNumber);
+  };
+
   //could combine called functiosn into 1.
   handleSelectedCountry = (event) => {
     this.loadComplexCountryDetails(event.target.value);
     this.loadBasicCountryDetails(event.target.value);
-  };
-
-  handleSelectedBudget = (event) => {
-    console.log(event.target.value);
-    this.setState({ basicCountryDetails: event.data });
-  };
-
-  // setState to a random item in from an array of countries
-  handleRandomCountry = () => {
-    this.setState({
-      countries: Math.floor(Math.random() * this.state.countries.length),
-    });
-    console.log(this.state.countries);
   };
 
   render() {
@@ -80,7 +87,11 @@ export default class Budget extends Component {
 
         <div className="page">
           <div className="section-header">
-            <h2>Budget </h2>
+            <div className="page-navbar">
+              <h3>Learn</h3>
+              <h2>Budget </h2>
+              <h3>Plan</h3>
+            </div>
           </div>
           <div className="budget-overview">
             <p>
@@ -99,6 +110,8 @@ export default class Budget extends Component {
             <div className="country-selector">
               {this.state.countries && (
                 <Selector
+                  basicDetails={this.state.basicCountryDetails}
+                  complexDetails={this.state.complexCountryDetails}
                   countries={this.state.countries}
                   handleSelectedCountry={this.handleSelectedCountry}
                 />
@@ -111,14 +124,10 @@ export default class Budget extends Component {
                 />
               )}
             </div>
-            {!this.state.basicCountryDetails &&
-              !this.state.complexCountryDetails && (
-                <div className="infocard-details__wrapper">
-                  <div className="filler-card" id="flag"></div>
-                </div>
-              )}
+
             {this.state.basicCountryDetails &&
-              this.state.complexCountryDetails && (
+              this.state.complexCountryDetails &&
+              this.state.budgetLevel && (
                 <Costs
                   basicDetails={this.state.basicCountryDetails}
                   complexDetails={this.state.complexCountryDetails}
@@ -128,6 +137,18 @@ export default class Budget extends Component {
               )}
           </div>{" "}
         </div>
+
+        {/* {!this.state.basicCountryDetails && !this.state.complexCountryDetails && (
+          <div className="infocard-details__wrapper">
+            <div className="filler-card" id="flag">
+              View typical and average travel costs for thousands of cities and
+              hundreds of countries around the world to help you plan your next
+              trip's budget. All of the average travel costs and budgets come
+              from real travelers.
+            </div>
+          </div>
+        )} */}
+
         <div className="page" id="sub-page">
           <Tips />
         </div>

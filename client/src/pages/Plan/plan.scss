@@ -2,10 +2,47 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 20rem;
+  justify-content: space-evenly;
 }
 
-.plan__card {
+.plan__wrapper p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 1rem;
+}
+
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__input,
+  &__select {
+    width: 8rem;
+    height: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  &__input {
+    width: 4rem;
+    padding-right: 1rem;
+  }
+}
+
+.card-details__suggestion {
+  width: 20rem;
+}
+
+#suggestion {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: transparent;
+  box-shadow: none;
+}
+
+#plan-icon {
+  width: 64px;
+  // height: 64px;
 }

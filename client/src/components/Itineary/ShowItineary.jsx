@@ -1,57 +1,63 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Modal from "react-modal";
+import Modal from "./Modal/Modal";
+import Delete from "../../assets/icons/remove.png";
+import Edit from "../../assets/icons/edit.png";
 
 export class ShowItineary extends Component {
   state = {
     show: false,
-    trips: this.props.tripsObject,
+    currentID: this.props.trips.id,
   };
 
   render() {
-    // console.log(this.state.trips);
-
     return (
       <>
-        <div className="table-row__column">
-          <div className="row-1 mobile">
-            <div>
-              <h3>Trip</h3>
-            </div>
-            Name: {this.props.trips.name}
-            Cost: {this.props.trips.cost}
-            Date: {this.props.trips.date}
-            <Link id="flex" to={`/trips/details/${this.state.currentID}`}>
-              View
-            </Link>
-            <Link to={`/trips/edit/${this.state.currentID}`}>
-              <span>Edit</span>
+        <span className="trip-summary">
+          <div className="trip-summary__title">
+            <Link to={`/plan/trips/edit/${this.state.currentID}`}>
+              <span>
+                <img src={Edit} alt="Edit-Icon" id="edit-icon" />
+              </span>
               {/* <img src={editIcon} alt="Edit-Icon" /> */}
             </Link>
-            <div className="row-5 mobile">
-              <button
-                alt="Delete-Icon"
-                id="row5"
-                onClick={() => {
-                  this.setState({ show: true });
-                }}
-              >
-                Delete{" "}
-              </button>
-              <Modal
-                onClose={() => {
-                  this.setState({ show: false });
-                }}
-                type="warehouse"
-                show={this.state.show}
-                objectID={this.state.currentID}
-                // objectName={this.props.warehouses.name}
-                getData={this.props.getData}
-              />
-            </div>
+            <h4>{this.props.trips.name}</h4>
+            <img
+              src={Delete}
+              alt="Delete-Icon"
+              id="delete-icon"
+              onClick={() => {
+                this.setState({ show: true });
+              }}
+            />
+            <Modal
+              onClose={() => {
+                this.setState({ show: false });
+              }}
+              type="trip"
+              show={this.state.show}
+              objectID={this.state.currentID}
+              objectName={this.props.trips.name}
+              getData={this.props.getData}
+            />
+          </div>
+
+          <div className="trip-summary__row">
+            <h4>Destination: </h4> {this.props.trips.country}
             <br></br>
           </div>
-        </div>
+          <div className="trip-summary__row">
+            <h4>Projected Cost: </h4> {this.props.trips.cost}
+            <br></br>
+          </div>
+          <div className="trip-summary__row">
+            <h4>Date: </h4> {this.props.trips.date}
+          </div>
+          {/* <Link id="flex" to={`/trips/details/${this.state.currentID}`}>
+              View
+            </Link> */}
+          <br></br>
+        </span>
       </>
     );
   }

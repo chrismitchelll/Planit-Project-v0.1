@@ -6,10 +6,28 @@ body {
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
+#welcome-page {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+    url("../../assets/hero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: white;
+  height: 50rem;
+}
+
+#main-selector {
+  height: 20rem;
+}
+
 :root {
   --primary-color: rgba(245, 245, 245, 0.5);
   --secondary-color: #212121;
   --tertiary-color: rgba(216, 216, 216, 0.5);
+  --quaternary-color: rgba(216, 216, 216, 0.5);
+  --quinary-color: hsl(100 100% 40%);
+  line-height: 1.5;
 }
 
 .dark-theme {
@@ -36,11 +54,12 @@ select {
   flex-direction: row;
   border: black 2px solid;
   border-radius: 5px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
+  align-items: center;
   background: rgba(255, 255, 255, 0.192);
   backdrop-filter: blur(1px);
   border-radius: 15px;
+  justify-content: space-evenly;
 }
 
 .flag {
@@ -64,7 +83,7 @@ select {
   display: flex;
   justify-content: center;
   /*  leverage cascade for cross-browser gradients  */
-  background: radial-gradient(hsl(100 100% 40%), hsl(200 100% 40%)) fixed;
+  // background: radial-gradient(hsl(100 100% 40%), hsl(200 100% 40%)) fixed;
   background: conic-gradient(
       hsl(100 100% 40%),
       var(--secondary-color),
@@ -79,17 +98,18 @@ select {
 .next-button,
 .confirm-button,
 .traveller-button {
-  background-color: rgb(00, 200, 90);
-  color: var(--secondary-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  width: 10rem;
-  border-radius: 10%;
-  border: #212121 2px solid;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  border-radius: 15px;
+  width: 10rem;
+  background-color: rgb(00, 200, 90);
+  color: var(--secondary-color);
+  border-radius: 15px;
+  border: #212121 2px solid;
+  cursor: pointer;
 }
 
 .next-button,

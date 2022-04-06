@@ -2,16 +2,10 @@ import React, { useState } from "react";
 import Confirm from "../Buttons/ConfirmButton/Confirm";
 import "./selector.scss";
 
-export default function Selector({
-  handleSelectedCountry,
-  confirmSelectedCountry,
-  chosenCountry,
-  handleSelectedBudget,
-  budgetLevel,
-}) {
+export default function Selector({ handleSelectedCountry, chosenCountry }) {
   return (
     <>
-      <div className="flag"></div>{" "}
+      <div className="flag"></div> <h3>Where To?</h3>
       <select
         className="country-selector__dropdown"
         name="countries"

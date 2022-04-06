@@ -9,6 +9,11 @@
   font-family: "Inter", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 // WRAPPERS
 
 @mixin wrapper-mobile {

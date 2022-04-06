@@ -2,9 +2,65 @@
 // @use "../../styles/partials/breakpoints" as *;
 // @use "../../styles/partials/variables" as *;
 
+.trip-container__top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.trip-container__main,
+.trip-summary,
+.trip-summary__title,
+.trip-summary__row {
+  display: flex;
+}
+
+.trip-container__main {
+  height: 10rem;
+}
+
+.trip-container__button {
+  background-color: #00c85a;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+.trip-container__button:hover {
+  transform: translateY(-2px);
+}
+
+.trip-summary {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 15rem;
+  height: 15rem;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 1rem;
+  &__title {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    &__row {
+      margin-top: 1rem;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  }
+}
+
+#edit-icon,
+#delete-icon {
+  width: px;
+  height: 24px;
+}
+
 //DELETEME
-.testbox {
-  border: 2px solid red;
+.planning-wrapper {
+  height: 30rem;
+  padding: 1rem;
 }
 
 .edit-warehouse {

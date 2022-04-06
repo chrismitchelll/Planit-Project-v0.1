@@ -1,7 +1,22 @@
-.weatherCard {
+.weather-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 1.35;
+}
+.weather-card h4 {
+  text-align: center;
+}
+
+.weather-card__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-text {
