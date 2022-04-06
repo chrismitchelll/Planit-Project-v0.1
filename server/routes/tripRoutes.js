@@ -12,19 +12,31 @@ router.get("/", (req, res) => {
   res.status(200).json(tripData);
 });
 
-///------Trip Data GET------///
-router.get("/:id", (req, res) => {
-  const tripContent = readFile("./data/trips.json");
-  const selectedTrip = tripContent.find((trip) => trip.id == req.params.id);
-  res.status(200).json(selectedTrip);
+router.get("/:tripId", (req, res) => {
+  const itinearyData = readFile("./data/trips.json");
+  const tripId = req.params.tripId;
+  const itinearyItem = itinearyData.find((item) => item.id === tripId);
+
+  if (!itinearyItem) {
+    res.status(400).json("Please provide a valid itineary item ID");
+  }
+  res.status(200).json(itinearyItem);
 });
 
-// DELETE trip AND CORRESPONDING INVENTORY
+// ///------Trip Data GET------///
+// router.get("/:id", (req, res) => {
+//   const tripContent = readFile("./data/trips.json");
+//   const selectedTrip = tripContent.find((trip) => trip.id == req.params.id);
+//   res.status(200).json(selectedTrip);
+// });
+
+// DELETE trip AND CORRESPONDING itineary
 router.delete("/:tripId", (req, res) => {
   const tripId = req.params.tripId;
   const tripData = readFile("./data/trips.json");
-  let itinearyData = readFile("./data/inventories.json");
-  console.log(tripId);
+  console.log("tData" + tripId);
+  let itinearyData = readFile("./data/trips.json");
+  console.log("iData" + tripId);
 
   const trip = tripData.find((object) => object.id == tripId);
   if (!trip) {
@@ -50,27 +62,6 @@ router.delete("/:tripId", (req, res) => {
 
 module.exports = router;
 
-//*CREATE-NEW-trip
-// router.post("/", (req, res) => {
-//   const tripData = JSON.parse(fs.readFileSync("./data/trips.json"));
-//   const newtrip = {
-//     id: uuidv4(),
-//     name: req.body.name,
-//     address: req.body.address,
-//     city: req.body.city,
-//     country: req.body.country,
-//     budget: {
-//       name: req.body.contact.name,
-//       position: req.body.contact.position,
-//       phone: req.body.contact.phone,
-//       email: req.body.contact.email,
-//     },
-//   };
-
-//   tripData.push(newtrip);
-//   fs.writeFileSync("./data/trips.json", JSON.stringify(tripData));
-//   res.status(201).json(newtrip);
-// });
 //Post new Trip
 router.post("/", (req, res) => {
   if (!req.body) {
@@ -80,16 +71,10 @@ router.post("/", (req, res) => {
     console.log(req.body);
     const newTrip = {
       id: uuidv4(),
-      name: "Trip to Mars",
-      cost: "$500,000,000,000",
-      date: "2029-04-01",
-      country: "None",
-      contact: {
-        name: "Elon Musk",
-        position: "CEO",
-        phone: "+1 (646) 123-1234",
-        email: "elon@spacex.com",
-      },
+      name: req.body.name,
+      cost: req.body.cost,
+      date: req.body.date,
+      country: req.body.country,
     };
     const fileContent = JSON.parse(fs.readFileSync("./data/trips.json"));
     fileContent.push(newTrip);
