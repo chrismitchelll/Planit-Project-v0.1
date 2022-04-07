@@ -1,47 +1,9 @@
-.homescreen-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  border: black 2px solid;
-  border-radius: 5px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  background: rgba(255, 255, 255, 0.192);
-  -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);
-  border-radius: 15px;
-}
-
 .button-wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.homescreen-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 15px;
-  width: 10rem;
-  background-color: rgb(00, 200, 90);
-  color: var(--secondary-color);
-  border-radius: 15px;
-  border: #212121 2px solid;
-  cursor: pointer;
-  height: 3rem;
-  width: 5rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
-.homescreen-button:hover {
-  opacity: 0.8;
-  transition: 0.35s ease-in-out;
-  transform: translateY(-2px);
+#main-selector {
+  height: 22rem;
 }

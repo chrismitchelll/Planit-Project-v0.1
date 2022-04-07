@@ -20,7 +20,6 @@ export default function Budgeter({ handleSelectedBudget, budgetLevel }) {
           <option value="2.5">Luxury</option>
         </select>
       </div>
-      {/* <Confirm confirmSelectedCountry={this.confirmSelectedCountry} /> */}
     </>
   );
 }

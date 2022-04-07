@@ -71,9 +71,7 @@ export default function Converter() {
               class="form-control searchBox"
               placeholder="0.00"
               id="oamount"
-            >
-              {" "}
-            </input>
+            ></input>
           </div>
 
           <div class="row">
@@ -223,7 +221,7 @@ export default function Converter() {
             <h2>
               Converted Amount :
               <span class="finalValue" style="color:green;"></span>
-            </h2>{" "}
+            </h2>
           </div>
         </div>
       </div>

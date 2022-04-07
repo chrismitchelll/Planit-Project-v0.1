@@ -71,7 +71,6 @@ export default class Budget extends Component {
   handleSelectedBudget = (event) => {
     const budgetNumber = parseFloat(event.target.value);
     this.setState({ budgetLevel: budgetNumber });
-    console.log(budgetNumber);
   };
 
   //could combine called functiosn into 1.
@@ -87,12 +86,9 @@ export default class Budget extends Component {
 
         <div className="page">
           <div className="section-header">
-            <div className="page-navbar">
-              <h3>Learn</h3>
-              <h2>Budget </h2>
-              <h3>Plan</h3>
-            </div>
+            <h1>Budget </h1>
           </div>
+
           <div className="budget-overview">
             <p>
               Calculating a budget for a trip can be complicated. Here are some
@@ -104,7 +100,7 @@ export default class Budget extends Component {
               <span className="budgetyourtrip-banner__text">
                 Budget Your Trip
               </span>
-            </div>{" "}
+            </div>
           </div>
           <div className="content-wrapper">
             <div className="country-selector">
@@ -135,20 +131,39 @@ export default class Budget extends Component {
                   budget={this.state.budgetLevel}
                 />
               )}
-          </div>{" "}
+          </div>
         </div>
-
-        {/* {!this.state.basicCountryDetails && !this.state.complexCountryDetails && (
-          <div className="infocard-details__wrapper">
-            <div className="filler-card" id="flag">
-              View typical and average travel costs for thousands of cities and
-              hundreds of countries around the world to help you plan your next
-              trip's budget. All of the average travel costs and budgets come
-              from real travelers.
+        <div className="page">
+          <div className="content-wrapper">
+            <div className="budget-background">
+              <h2>Behind the Data</h2>
+              <div className="budget-background__section">
+                Planit allows users to view typical and average travel costs for
+                thousands of cities and hundreds of countries around the world
+                to help you plan your next trip's budget. All of the average
+                travel costs and budgets come from real travelers, with some
+                help from Budget Your Trip.
+              </div>
+              {/* <div>
+              <h3>Data</h3>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              veniam voluptas repellat cumque doloribus dolore omnis sit minus
+              ea atque.
+            </div> */}
+              <div className="budget-background__section">
+                {" "}
+                <h3>Why a BigMac Index?</h3>
+                The Big Mac index refers to the cost of a burger in McDonald's
+                network. Every BigMac sold requires meat, vegetables, cheese,
+                bread and other foods. It also includes the cost of renting
+                space and equipment, labor, and other factors.<br></br> If the
+                price of a Big Mac is lower, then we can say that the overall
+                prices in that country are relatively low, even if the higher
+                prices are relatively high.
+              </div>
             </div>
           </div>
-        )} */}
-
+        </div>
         <div className="page" id="sub-page">
           <Tips />
         </div>

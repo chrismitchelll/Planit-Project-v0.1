@@ -7,7 +7,7 @@ export default function Convert() {
         <div className="infocard-details">
           <span className="title">Official Language</span>
           <span className="value">{languageMarkup}</span>
-        </div>{" "}
+        </div>
         <div className="infocard-details">
           <span className="title">Timezone</span>
           <span className="value">{basicDetails.timezone.name}</span>

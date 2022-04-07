@@ -1,5 +1,5 @@
 import React, { useState, Component } from "react";
-import "./home.scss";
+import "./main.scss";
 import axios from "axios";
 import Selector from "../../components/Selector/Selector";
 import Details from "../../components/Details/Details";
@@ -9,7 +9,6 @@ import Weather from "../../components/Weather/Weather";
 import Inspire from "../../components/Buttons/InspireButton/Inspire";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
-import Capital from "../../assets/icons/main/capital.png";
 
 export default class Home extends Component {
   state = {
@@ -44,14 +43,6 @@ export default class Home extends Component {
 
   //could combine called functions into 1.
   handleSelectedCountry = (event) => {
-    // this.setState({
-    //   complexCountryDetails: event.target.value,
-    //   basicCountryDetails: event.target.value,
-    // });
-    // console.log(
-    //   this.state.complexCountryDetails,
-    //   "and" + this.state.basicCountryDetails
-    // );
     this.loadComplexCountryDetails(event.target.value);
     this.loadBasicCountryDetails(event.target.value);
   };
@@ -81,14 +72,8 @@ export default class Home extends Component {
                 handleRandomCountry={this.handleRandomCountry}
                 confirmSelectedCountry={this.confirmSelectedCountry}
               />
-              {/* <Inspire /> */}
             </div>
-            {/* {!this.state.basicCountryDetails &&
-              !this.state.complexCountryDetails && (
-                <div className="infocard-details__wrapper">
-                  <div className="filler-card" id="flag"></div>
-                </div>
-              )} */}
+
             {this.state.basicCountryDetails &&
               this.state.complexCountryDetails && (
                 <Details
@@ -119,38 +104,17 @@ export default class Home extends Component {
               />
             )}
 
-          {this.state.basicCountryDetails && (
+          {/* {this.state.basicCountryDetails && (
             <Weather
               details={this.state.basicCountryDetails}
               chosenCountry={this.state.country}
               handleSelectedCountry={this.handleSelectedCountry}
             />
-          )}
+          )} */}
         </div>
+
         <Footer />
       </>
     );
   }
 }
-
-//-------Hooks---------//
-// const [setCountry] = useState(false);
-
-// console.log(this.state);
-
-//   handleChange(event) {
-//     let value = event.target.value;
-//     this.setState({
-//         disabled: value == '2'
-//     });
-// }
-
-// revealName() {
-//   // setCountry(countryOptions);
-//   // console.log("reveal name");
-// }
-
-// setCountry() {
-//   // setCountry(countryOptions);
-//   console.log(this.country.name);
-// }

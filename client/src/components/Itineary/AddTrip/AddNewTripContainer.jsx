@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "./addtrip.scss";
+// import backarrow from "../../../assets/arrow-back-24px.svg";
+import Arrow from "../../../components/Arrow/Arrow";
 
 export default class AddNewitineary extends Component {
   state = {
@@ -23,13 +26,10 @@ export default class AddNewitineary extends Component {
           warehouseData: response.data,
         });
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   }
 
   handleChange = (event) => {
-    console.log("handleChange");
     if (
       event.target.name === "status" &&
       event.target.value === "Out Of Stock"
@@ -44,7 +44,6 @@ export default class AddNewitineary extends Component {
   };
 
   resetState = () => {
-    console.log("reset state");
     this.setState({
       itemName: null,
       description: null,
@@ -66,11 +65,10 @@ export default class AddNewitineary extends Component {
       // (this.state.quantity <= 0 && this.state.status === "In Stock") ||
       // (this.state.quantity > 0 && this.state.status === "Out Of Stock")
     ) {
-      console.log("invalid form");
       alert("Please fill out all fields");
       return false;
     }
-    console.log("valid form");
+
     return true;
   };
 
@@ -101,90 +99,99 @@ export default class AddNewitineary extends Component {
 
   render() {
     return (
-      <div className="add-itineary">
-        <Link to={"/plan"} className="add-itineary__back">
-          <span>[Arrow]</span>
-        </Link>
+      <>
+        <div className="add-itineary__wrapper">
+          <div className="add-itineary">
+            <div className="section-header">
+              <h1>Add a New Trip</h1>
+            </div>
+            <div className="add-itineary__form--body">
+              <Link to={"/plan"} className="add-itineary__back">
+                {/* <img src={backarrow} alt="back-arrow" /> */}
+                <Arrow />
+              </Link>
+              <form
+                name="additineary"
+                onSubmit={this.handleSubmit}
+                className="add-itineary__form"
+              >
+                <div className="add-itineary__form--elements">
+                  <div className="add-itineary__item--info">
+                    <label>Trip Name</label>
+                    <br></br>
+                    <input
+                      onChange={this.handleChange}
+                      className={`${
+                        !this.state.itemName && !this.state.formValid
+                          ? "add-itineary__input--missing"
+                          : "add-itineary__input"
+                      }`}
+                      placeholder="Trip Name"
+                      name="tripName"
+                      autoComplete="off"
+                    />
+                  </div>
+                  <div className="add-itineary__item--info">
+                    <label>Destination</label>
+                    <br></br>
+                    <input
+                      onChange={this.handleChange}
+                      className={`${
+                        !this.state.itemName && !this.state.formValid
+                          ? "add-itineary__input--missing"
+                          : "add-itineary__input"
+                      }`}
+                      placeholder="Destination Name"
+                      name="tripDestination"
+                      autoComplete="off"
+                    />
+                  </div>
+                  <div className="add-itineary__item--info">
+                    <label>Estimated Trip Cost</label>
+                    <br></br>
+                    <input
+                      onChange={this.handleChange}
+                      className={`${
+                        !this.state.itemName && !this.state.formValid
+                          ? "add-itineary__input--missing"
+                          : "add-itineary__input"
+                      }`}
+                      placeholder="Estimate Your Trip Costs"
+                      name="tripCost"
+                      autoComplete="off"
+                    />
+                  </div>
+                  <div className="add-itineary__item--info">
+                    <label>Start Date</label>
+                    <br></br>
+                    <input
+                      onChange={this.handleChange}
+                      className={`${
+                        !this.state.itemName && !this.state.formValid
+                          ? "add-itineary__input--missing"
+                          : "add-itineary__input"
+                      }`}
+                      type="date"
+                      placeholder="Item Name"
+                      name="tripDate"
+                      min="2022 - 04 - 09"
+                    />
+                  </div>
+                </div>
 
-        <form
-          name="additineary"
-          onSubmit={this.handleSubmit}
-          className="add-itineary__form"
-        >
-          <div className="add-itineary__form-elements">
-            <div className="add-itineary__item-info">
-              <label>Trip Name</label>
-              <br></br>
-              <input
-                onChange={this.handleChange}
-                className={`${
-                  !this.state.itemName && !this.state.formValid
-                    ? "add-itineary__input--missing"
-                    : "add-itineary__input"
-                }`}
-                placeholder="Trip Name"
-                name="tripName"
-                autoComplete="off"
-              />
-            </div>
-            <div className="add-itineary__item-info">
-              <label>Destination</label>
-              <br></br>
-              <input
-                onChange={this.handleChange}
-                className={`${
-                  !this.state.itemName && !this.state.formValid
-                    ? "add-itineary__input--missing"
-                    : "add-itineary__input"
-                }`}
-                placeholder="Destination Name"
-                name="tripDestination"
-                autoComplete="off"
-              />
-            </div>
-            <div className="add-itineary__item-info">
-              <label>Estimated Trip Cost</label>
-              <br></br>
-              <input
-                onChange={this.handleChange}
-                className={`${
-                  !this.state.itemName && !this.state.formValid
-                    ? "add-itineary__input--missing"
-                    : "add-itineary__input"
-                }`}
-                placeholder="Estimate Your Trip Costs"
-                name="tripCost"
-                autoComplete="off"
-              />
-            </div>
-            <div className="add-itineary__item-info">
-              <label>Start Date</label>
-              <br></br>
-              <input
-                onChange={this.handleChange}
-                className={`${
-                  !this.state.itemName && !this.state.formValid
-                    ? "add-itineary__input--missing"
-                    : "add-itineary__input"
-                }`}
-                type="date"
-                placeholder="Item Name"
-                name="tripDate"
-                min="2022 - 04 - 09"
-              />
+                <div className="add-itineary__buttons">
+                  <Link className="add-itineary__cancel-link" to="/plan/">
+                    <button className="add-itineary__cancel">Cancel</button>
+                  </Link>
+                  <button type="submit" className="add-itineary__add">
+                    +Add Item
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
-
-          <div className="add-itineary__buttons">
-            <Link className="add-itineary__cancel-link" to="/plan/trips">
-              <button className="add-itineary__cancel">Cancel</button>
-            </Link>
-            <button type="submit" className="add-itineary__add">
-              +Add Item
-            </button>
-          </div>
-        </form>
-      </div>
+        </div>
+      </>
     );
   }
 }

@@ -37,7 +37,6 @@ export default function Total({
 
   return (
     <>
-      {" "}
       <div className="plan-wrapper">
         <div className="infocard-details__wrapper" id="total">
           <div className="card-details">

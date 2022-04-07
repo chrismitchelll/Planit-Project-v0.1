@@ -1,116 +1,82 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import "./footer.scss";
-import Home from "../../assets/icons/taskbar/home.png";
-import Wallet from "../../assets/icons/taskbar/wallet.png";
-import Holiday from "../../assets/icons/taskbar/holidays.png";
-import List from "../../assets/icons/taskbar/list.png";
-import Task from "../../assets/icons/taskbar/task.png";
+import githubIcon from "../../assets/ext-logos/github.png";
+import LinkedIn from "../../assets/ext-logos/linkedin.png";
 import About from "../../assets/icons/taskbar/info.png";
-import Welcome from "../../assets/icons/taskbar/welcome.png";
 
-let scrollUp = () => {
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
-};
+export default function PageFooter() {
+  let scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
 
-export class Footer extends Component {
-  render() {
-    return (
-      <>
-        <div className="footer">
-          <ul className="footer__list">
-            <Link to={`/home`}>
-              <li className="footer__list--li">
-                {" "}
-                <img
-                  src={Home}
-                  onClick={scrollUp()}
-                  alt="home-icon"
-                  id="footer-icon"
-                />
-                <a href="/">Home</a>
-              </li>
-            </Link>{" "}
-            <Link to={`/welcome`}>
-              <li className="footer__list--li">
-                <img
-                  src={Welcome}
-                  onClick={scrollUp()}
-                  alt="home-icon"
-                  id="footer-icon"
-                />
-                <a href="/">Landing</a>
-              </li>
-            </Link>
-            <Link to={`/main`}>
-              <li className="footer__list--li">
-                {" "}
-                <img
-                  src={Holiday}
-                  onClick={scrollUp()}
-                  alt="home-icon"
-                  id="footer-icon"
-                />
-                <a href="/">Main</a>
-              </li>
-            </Link>
-            <Link to={`/budget`}>
-              <li className="footer__list--li">
-                {" "}
-                <img
-                  src={Wallet}
-                  onClick={scrollUp()}
-                  alt="home-icon"
-                  id="footer-icon"
-                />
-                <a href="/">Budget</a>
-              </li>
-            </Link>{" "}
-            <Link to={`/plan`}>
-              <li className="footer__list--li">
-                {" "}
-                <img
-                  src={Task}
-                  onClick={scrollUp()}
-                  alt="home-icon"
-                  id="footer-icon"
-                />
-                <a href="/">Plan</a>
-              </li>
-            </Link>{" "}
-            <Link to={`/plan/trips`}>
-              <li className="footer__list--li">
-                {" "}
-                <img
-                  src={List}
-                  onClick={scrollUp()}
-                  alt="home-icon"
-                  id="footer-icon"
-                />
-                <a href="/">My Trips</a>
-              </li>
-            </Link>{" "}
-            <Link to={`/about`}>
-              <li className="footer__list--li">
-                {" "}
-                <img
-                  src={About}
-                  onClick={scrollUp()}
-                  alt="home-icon"
-                  id="footer-icon"
-                />
-                <a href="/">About </a>
-              </li>
-            </Link>
-          </ul>
+  return (
+    <footer className="footer">
+      <div className="footer-container">
+        <Link className="footer__link" to="/">
+          <p className="footer__text footer__title">
+            <span className="span--bold">© 2022 Planit</span> All rights
+            reserved.
+          </p>
+        </Link>
+        <div className="footer__centrebox">
+          <div className="footer__textbox">
+            <a
+              className="footer__anchor"
+              rel="noreferrer"
+              href="mailto:christian.tp.mitchell@gmail.com"
+              target="_blank"
+            >
+              <p className="footer__text">Get in Touch</p>
+            </a>
+          </div>
+
+          <Link className="footer__link" to="/about">
+            <div className="footer__textbox">
+              <p className="footer__text">About</p>
+            </div>
+          </Link>
+          <Link className="footer__link" to="/intro">
+            <div className="footer__textbox">
+              <p className="footer__text">by Christian Mitchell</p>
+            </div>
+          </Link>
         </div>
-      </>
-    );
-  }
-}
 
-export default Footer;
+        <div className="footer__icon--wrapper">
+          <div className="footer__icon--container">
+            <Link to={`/about`}>
+              <div className="footer__icon--container">
+                <a href="/about" rel="noreferrer" target="_blank">
+                  <img className="footer__icon" alt="ext-logo" src={About} />
+                </a>
+              </div>
+            </Link>
+          </div>
+          <div className="footer__icon--container">
+            <a
+              href="https://github.com/chrismitchelll"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <img className="footer__icon" alt="ext-logo" src={githubIcon} />
+            </a>
+          </div>
+          <div className="footer__icon--container">
+            <a
+              href="https://www.linkedin.com/in/christiantpmitchell/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <img className="footer__icon" alt="ext-logo" src={LinkedIn} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

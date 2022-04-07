@@ -92,7 +92,6 @@ export default function Weather({ details }) {
       </div>
       <div className="content-wrapper">
         <div className="weather-card__main">
-          {" "}
           <div className="card-details__main">
             <span className="title">
               <h3>Forecast Data</h3>
@@ -111,7 +110,6 @@ export default function Weather({ details }) {
       </div>
       <div className="content-wrapper">
         <div className="weather-card__main">
-          {" "}
           <div className="card-details__main">
             <span className="title">
               <h3>Forecast Data</h3>

@@ -62,14 +62,14 @@ export default function Details({ basicDetails, complexDetails }) {
             <img src={Dish} alt="Dish-icon" id="main-icon" />
             <span className="title">National Dishes</span>
             <p className="value">{dishData}</p>
-          </div>{" "}
+          </div>
           <div className="infocard-details">
             <img src={Animal} alt="Dish-icon" id="main-icon" />
             <span className="title">National Animal</span>
             <span className="value">
               {getAnimal}({getAnimaltype})
             </span>
-          </div>{" "}
+          </div>
         </div>
         <div className="infocard-details__wrapper">
           <div className="infocard-details">
@@ -78,19 +78,19 @@ export default function Details({ basicDetails, complexDetails }) {
             <span className="value">
               {cheersData} ("{pronunciationData}")
             </span>
-          </div>{" "}
+          </div>
           <div className="infocard-details">
             <img src={Beer} alt="Beer-icon" id="main-icon" />
             <span className="title">Most Popular Beer</span>
             <span className="value">{beerData}</span>
-          </div>{" "}
+          </div>
         </div>
         <div className="infocard-details__wrapper">
           <div className="infocard-details">
             <img src={Dollar} alt="Dollar-icon" id="main-icon" />
             <span className="title">Currency</span>
             <span className="value">{basicDetails.currency.name}</span>
-          </div>{" "}
+          </div>
           <div className="infocard-details">
             <img src={Money} alt="Conversion-icon" id="main-icon" />
             <span className="title">$1:</span>
@@ -99,7 +99,7 @@ export default function Details({ basicDetails, complexDetails }) {
               {basicDetails.currency.code}
             </span>
           </div>
-        </div>{" "}
+        </div>
       </div>
     </>
   );

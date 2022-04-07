@@ -38,41 +38,28 @@ export default function Darkmode({}) {
       <div className="header">
         <div className="header__left">
           <Link to={`/`}>
-            {" "}
             <img src={logoIcon} onClick={scrollUp()} id="logoicon" alt="icon" />
             {/* <a href="/">Main</a> */}
           </Link>
-        </div>
-        <div className="header__middle">
-          {/* <div className="section-header"><h2>Homepage</h2></div> */}
-          <div className="dropdown">
-            <button className="dropbtn">
-              {/* <img src={Inform} onClick={scrollUp()} id="dlicon" alt="icon" /> */}
+          <div className="header__links--container">
+            <div className="dropbtn">
               <a href="/main">Learn</a>
-            </button>
-          </div>
-          <div className="dropdown">
-            <button className="dropbtn">
-              {/* <img src={Budget} onClick={scrollUp()} id="dlicon" alt="icon" />{" "} */}
-              <a href="/budget">Budget</a>
-            </button>
-            <div className="dropdown-content">
-              <a href="/budget">Plan A Trip</a>
-              <a href="/plans/trips/">Planned Trips</a>
             </div>
-          </div>
-          <div className="dropdown">
-            <button className="dropbtn">
-              {" "}
-              {/* <img src={Itineary} onClick={scrollUp()} id="dlicon" alt="icon" /> */}
-              Plan
-            </button>
+
+            <div className="dropbtn">
+              <a href="/budget">Budget</a>
+            </div>
+            <div className="dropbtn">
+              <a href="/plan">Plan</a>
+            </div>
+
             <div className="dropdown-content">
               <a href="/plan">Plan A Trip</a>
               <a href="/plan/trips">View Planned Trips</a>
             </div>
           </div>
         </div>
+        <div className="header__middle"></div>
         <div className="header__right">
           <div className="icon">
             <img
@@ -89,17 +76,17 @@ export default function Darkmode({}) {
               alt="light-mode switch"
               onClick={toggleIcon}
             />
-            <Link to={`/tools`}>
+            {/* <Link to={`/tools`}>
               <img
                 src={Exchange}
                 onClick={scrollUp()}
                 alt="home-icon"
                 id="userIcon"
               />
-            </Link>{" "}
+            </Link> */}
             <Link to={`/plan/trips`}>
               <img src={userIcon} id="userIcon" alt="user-icon" />
-            </Link>{" "}
+            </Link>
           </div>
         </div>
       </div>

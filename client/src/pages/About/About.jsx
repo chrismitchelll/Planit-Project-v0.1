@@ -23,7 +23,7 @@ export class About extends Component {
             <img src={techStack} alt="techstack" id="tech-stack" />
           </div>
           <div className="section-header">
-            <h2>About The Author</h2>{" "}
+            <h2>About The Author</h2>
           </div>
           <div className="section-left">
             <img src={author} alt="author" id="author" />

@@ -18,12 +18,10 @@ export default class EditTrip extends Component {
   };
 
   getTripData = () => {
-    console.log(this.props.match.params.id);
     axios
       //  .get(`http://localhost:8888/trips/2966c286-16cd-4d43-ab67-c79f698aeab0`)
       .get(`http://localhost:8888/trips/${this.props.match.params.tripsId}`)
       .then((response) => {
-        console.log(response);
         this.setState({
           name: response.data.name,
           country: response.data.country,
@@ -31,9 +29,7 @@ export default class EditTrip extends Component {
           date: response.data.date,
         });
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   };
 
   componentDidMount() {
@@ -41,7 +37,6 @@ export default class EditTrip extends Component {
   }
 
   handleChange = (event) => {
-    console.log(event.target.value);
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -60,7 +55,6 @@ export default class EditTrip extends Component {
   };
 
   handleSubmit = (event) => {
-    console.log("hey");
     event.preventDefault();
     if (this.isFormValid()) {
       axios

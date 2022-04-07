@@ -17,27 +17,46 @@ export default function Details({
   budget,
 }) {
   // multiply a number by 7 to get the weekly cost
-  const weeklyCost = // console.log(budget)
-    (
-      (complexDetails.daily +
-        complexDetails.entertainment +
-        complexDetails.meals +
-        complexDetails.transportation +
-        complexDetails.alcohol) *
-      budget *
-      7
-    ).toFixed(0);
+  const weeklyCost = (
+    (complexDetails.daily +
+      complexDetails.entertainment +
+      complexDetails.meals +
+      complexDetails.transportation +
+      complexDetails.alcohol) *
+    budget *
+    7
+  ).toFixed(0);
+
+  const dailyCost = (
+    (complexDetails.daily +
+      complexDetails.entertainment +
+      complexDetails.meals +
+      complexDetails.transportation +
+      complexDetails.alcohol) *
+    budget
+  ).toFixed(0);
 
   return (
     <>
       <div className="infocard-details__wrapper">
-        <div className="card-details__main">
+        <div className="card-details__main" id="weeklyprice">
           <img src={Week} alt="weekly-icon" id="budget-icon" />
-          <span className="title">Weekly Budget</span>
-          <span className="value">
+          <span className="title">Weekly Budget:</span>
+          {/* <span className="value"> */}
+          <h3>
             {basicDetails.currency.code}
             {weeklyCost}
-          </span>
+          </h3>{" "}
+          <h4>
+            ({basicDetails.currency.code}
+            {dailyCost} per day)
+          </h4>
+          {/* <br></br>
+          Through combining data from BudgetMyTrip with your planned budget
+          level, you can expect to spend around
+          {basicDetails.currency.code}
+          {weeklyCost} per week of your stay in {complexDetails.country}. */}
+          {/* </span> */}
         </div>
       </div>
       <div className="infocard-details__wrapper">
@@ -66,7 +85,7 @@ export default function Details({
             {basicDetails.currency.code}
             {complexDetails.hotel}
           </span>
-        </div>{" "}
+        </div>
         <div className="card-details">
           <img src={Theatre} alt="entertainment-icon" id="budget-icon" />
           <span className="title">Entertainment Costs</span>
@@ -84,7 +103,7 @@ export default function Details({
             {basicDetails.currency.code}
             {complexDetails.meals}
           </span>
-        </div>{" "}
+        </div>
         <div className="card-details">
           <img src={Booze} alt="Drinks-icon" id="budget-icon" />
           <span className="title">Drinks Costs</span>
@@ -92,7 +111,7 @@ export default function Details({
             {basicDetails.currency.code}
             {complexDetails.alcohol}
           </span>
-        </div>{" "}
+        </div>
       </div>
       <div className="infocard-details__wrapper">
         <div className="card-details">
@@ -104,7 +123,7 @@ export default function Details({
           includes the cost of renting space and equipment, labor, and other
           factors. If the price of a Big Mac low then we can say that the prices
           in the country are low, even if the high prices are relatively high. */}
-        </div>{" "}
+        </div>
         <div className="card-details">
           <img src={Beer} alt="beer-icon" id="budget-icon" />
           <span className="title">0.5L of Beer Costs:</span>

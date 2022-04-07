@@ -13,16 +13,22 @@
 .trip-summary__title,
 .trip-summary__row {
   display: flex;
+  align-items: center;
 }
 
 .trip-container__main {
-  height: 10rem;
+  min-height: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .trip-container__button {
   background-color: #00c85a;
   border: 2px solid black;
   border-radius: 15px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .trip-container__button:hover {
@@ -33,8 +39,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 15rem;
+  width: 20rem;
   height: 15rem;
+  background-color: var(--primary-colour);
   border: 2px solid black;
   border-radius: 15px;
   padding: 1rem;
@@ -43,6 +50,8 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    border-bottom: var(--quinary-colour) 2px solid;
+
     &__row {
       margin-top: 1rem;
       flex-direction: row;
@@ -59,7 +68,7 @@
 
 //DELETEME
 .planning-wrapper {
-  height: 30rem;
+  min-height: 30rem;
   padding: 1rem;
 }
 

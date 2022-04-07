@@ -1,8 +1,8 @@
-// @use "../styles/partials/mixins" as *;
+@use "../styles/partials/mixins" as *;
 @use "../styles/partials/breakpoints" as *;
-// @use "../styles/partials/resets" as *;
-// @use "../styles/partials/typography" as *;
-// @use "../styles/partials/variables" as *;
+@use "../styles/partials/resets" as *;
+@use "../styles/partials/typography" as *;
+@use "../styles/partials/variables" as *;
 
 * {
   margin: 0;
@@ -27,4 +27,51 @@ a {
 @mixin wrapper-desktop {
   margin: 0 auto;
   max-width: 1280px; //1280 px
+}
+
+:root {
+  --primary-colour: rgba(245, 245, 245, 0.5);
+  --secondary-colour: #212121;
+  --tertiary-colour: rgba(216, 216, 216, 0.5);
+  --quaternary-colour: rgba(216, 216, 216, 0.5);
+  --quinary-colour: hsl(100 100% 40%);
+  --icon__fill-colour: brightness(1) invert(0);
+  line-height: 1.5;
+}
+
+.dark-theme {
+  --primary-colour: rgb(37, 37, 37);
+  --secondary-colour: rgb(255, 255, 255);
+  --tertiary-colour: rgb(57, 57, 57);
+  --icon__fill-colour: brightness(0) invert(1);
+}
+
+.page {
+  background-color: var(--primary-colour);
+  color: var(--secondary-colour);
+  padding-left: 14rem;
+  padding-right: 14rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+select {
+  width: 80%;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  border: black 2px solid;
+  border-radius: 5px;
+  padding: 1rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.192);
+  backdrop-filter: blur(1px);
+  border-radius: 15px;
+  justify-content: space-evenly;
+}
+
+#hidden {
+  visibility: hidden;
 }

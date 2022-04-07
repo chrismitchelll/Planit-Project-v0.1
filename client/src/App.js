@@ -11,7 +11,7 @@ import Budget from "./pages/Budget/Budget";
 import Tools from "./pages/Tools/Tools";
 import Profile from "./pages/Profile/Profile";
 import Plan from "./pages/Plan/Plan";
-import MyTrips from "./pages/Plan/MyTrips/MyTrips";
+import MyTrips from "./components/MyTrips/MyTrips";
 // import Login from "./components/Login/Login";
 import Landing from "./pages/Landing/Landing";
 import AddTrip from "./components/Itineary/AddTrip/AddTrip";
@@ -27,7 +27,7 @@ function App() {
             exact
             path="/welcome"
             render={(routerProps) => <Landing {...routerProps} />}
-          />{" "}
+          />
         </Switch>
         <Switch>
           <Redirect exact from="/home" to="/" />
@@ -35,48 +35,48 @@ function App() {
             exact
             path="/"
             render={(routerProps) => <Home {...routerProps} />}
-          />{" "}
+          />
         </Switch>
         <Switch>
           <Route
             exact
             path="/main"
             render={(routerProps) => <Main {...routerProps} />}
-          />{" "}
+          />
         </Switch>
         <Switch>
           <Route
             exact
             path="/budget"
             render={(routerProps) => <Budget {...routerProps} />}
-          />{" "}
+          />
         </Switch>
         <Switch>
           <Route
             exact
             path="/tools"
             render={(routerProps) => <Tools {...routerProps} />}
-          />{" "}
+          />
         </Switch>
         {/* <Switch>
           <Route
             path="/login"
             render={(routerProps) => <Login {...routerProps} />}
-          />{" "}
+          />
         </Switch> */}
         <Switch>
           <Route
             exact
             path="/plan"
             render={(routerProps) => <Plan {...routerProps} />}
-          />{" "}
+          />
         </Switch>
         <Switch>
           <Route
             exact
             path="/plan/trips"
             render={(routerProps) => <MyTrips {...routerProps} />}
-          />{" "}
+          />
         </Switch>
         <Route
           exact
@@ -92,13 +92,13 @@ function App() {
             exact
             path="/profile"
             render={(routerProps) => <Profile {...routerProps} />}
-          />{" "}
+          />
         </Switch>
         <Switch>
           <Route
             path="/about"
             render={(routerProps) => <About {...routerProps} />}
-          />{" "}
+          />
         </Switch>
       </>
     </Router>

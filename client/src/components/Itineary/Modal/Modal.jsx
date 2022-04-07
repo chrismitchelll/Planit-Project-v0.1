@@ -1,16 +1,17 @@
 import React from "react";
 import "./modal.scss";
 import axios from "axios";
+import closeIcon from "../../../assets/icons/remove.png";
 
 const Modal = ({ onClose, show, objectID, getData, objectName, type }) => {
-  // FUNCTION TO DELETE WAREHOUSE FROM API
+  // FUNCTION TO DELETE Trip FROM API
   const deleteTripAPI = async (id) => {
     try {
-      const deletedWarehouse = await axios.delete(
+      const deletedTrip = await axios.delete(
         `http://localhost:8888/trips/${id}`
       );
       getData();
-      console.log(deletedWarehouse);
+      console.log(deletedTrip);
     } catch (err) {
       console.log(`ERROR: ${err}`);
     }
@@ -32,14 +33,14 @@ const Modal = ({ onClose, show, objectID, getData, objectName, type }) => {
         className="modal__container"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="modal__close">
+        <div className="modal__close" onClick={onClose}>
+          Close
           {/* <img
             className="modal__icon"
             src={closeIcon}
             alt="close icon"
-            // onClick={onClose}
+            onClick={onClose}
           /> */}
-          Close
         </div>
         <div className="modal__header">
           <h1 className="modal__title">{`Delete ${objectName} ${type}?`}</h1>

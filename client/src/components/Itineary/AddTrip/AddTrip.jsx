@@ -9,8 +9,7 @@ export default class AddTrip extends Component {
     return (
       <>
         <Header />
-        <div className="page">
-          <h2>Add Trip</h2>
+        <div className="page itineary">
           <AddNewTripContainer
           //   match={this.props.match}
           />

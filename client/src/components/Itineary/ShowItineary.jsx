@@ -19,9 +19,8 @@ export class ShowItineary extends Component {
               <span>
                 <img src={Edit} alt="Edit-Icon" id="edit-icon" />
               </span>
-              {/* <img src={editIcon} alt="Edit-Icon" /> */}
             </Link>
-            <h4>{this.props.trips.name}</h4>
+            <h3>{this.props.trips.name}</h3>
             <img
               src={Delete}
               alt="Delete-Icon"
@@ -43,20 +42,16 @@ export class ShowItineary extends Component {
           </div>
 
           <div className="trip-summary__row">
-            <h4>Destination: </h4> {this.props.trips.country}
+            <h3>Destination: </h3> {this.props.trips.country}
             <br></br>
           </div>
           <div className="trip-summary__row">
-            <h4>Projected Cost: </h4> {this.props.trips.cost}
+            <h3>Projected Cost: </h3> {this.props.trips.cost}
             <br></br>
           </div>
           <div className="trip-summary__row">
-            <h4>Date: </h4> {this.props.trips.date}
+            <h3>Date: </h3> {this.props.trips.date}
           </div>
-          {/* <Link id="flex" to={`/trips/details/${this.state.currentID}`}>
-              View
-            </Link> */}
-          <br></br>
         </span>
       </>
     );

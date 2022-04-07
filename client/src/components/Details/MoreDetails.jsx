@@ -31,24 +31,19 @@ export default function Details({ basicDetails, complexDetails }) {
       <p>No Vaccinations</p>
     );
 
-  const emergencyMarkup =
-    basicDetails.telephone.length > 0 ? (
-      basicDetails.telephone.map((phoneNumber) => {
-        console.log(phoneNumber);
-        return (
-          <>
-            <h5>Police</h5>
-            <p>{phoneNumber.police}</p>
-            <h5>Fire</h5>
-            <p>{phoneNumber.police}</p>
-            <h5>Ambulance</h5>
-            <p>{phoneNumber.police}</p>
-          </>
-        );
-      })
-    ) : (
-      <p>No Data Availible</p>
-    );
+  const emergencyMarkup = (
+    <>
+      <h5>Police</h5>
+      <p>{basicDetails.telephone.police}</p>
+      <h5>Ambulance/Fire</h5>
+      <p>{basicDetails.telephone.ambulance}</p>
+    </>
+  );
+
+  // );
+  //   })
+  // ) : (
+  //   <p>No Data Availible</p>
 
   const languageMarkup =
     basicDetails.language.length > 0 ? (
@@ -76,9 +71,10 @@ export default function Details({ basicDetails, complexDetails }) {
       <p>No Neighbouring Countries</p>
     );
 
-  const plugsData = basicDetails.plugs
-    ? basicDetails.plugs
+  const plugsData = basicDetails.electricity.plugs
+    ? basicDetails.electricity.plugs
     : "Currently Unknown";
+
   const waterData = complexDetails.water
     ? complexDetails.water
     : "Unknown. Remain Cautious";
@@ -86,7 +82,7 @@ export default function Details({ basicDetails, complexDetails }) {
   return (
     <>
       <div className="section-header">
-        <h2>Need to Know</h2>{" "}
+        <h2>Need to Know</h2>
       </div>
       <div className="content-wrapper">
         <div className="infocard-details__wrapper">
@@ -103,7 +99,7 @@ export default function Details({ basicDetails, complexDetails }) {
 
             <span className="title">Official Language</span>
             <span className="value">{languageMarkup}</span>
-          </div>{" "}
+          </div>
           {/* <div className="infocard-details">
           <span className="title">Timezone</span>
           <span className="value">{basicDetails.timezone.name}</span>
@@ -114,7 +110,7 @@ export default function Details({ basicDetails, complexDetails }) {
             <img src={Emergency} alt="Emergency-icon" id="main-icon" />
             <span className="title">Emergency Contacts</span>
             <p className="value">{emergencyMarkup}</p>
-          </div>{" "}
+          </div>
           <div className="infocard-details">
             <img src={Neighbours} alt="Neighbours-icon" id="main-icon" />
             <span className="title">Neighbours</span>
@@ -126,19 +122,19 @@ export default function Details({ basicDetails, complexDetails }) {
             <img src={TapWater} alt="TapWater-icon" id="main-icon" />
             <span className="title">Tap Water</span>
             <span className="value"> {waterData} </span>
-          </div>{" "}
+          </div>
           <div className="infocard-details">
             <img src={Vaccine} alt="Vaccine-icon" id="main-icon" />
             <span className="title">Vaccinations?</span>
             <p className="value">{vaccinationMarkup}</p>
-          </div>{" "}
+          </div>
         </div>
         <div className="infocard-details__wrapper">
           <div className="infocard-details">
             <img src={Sun} alt="Temp-icon" id="main-icon" />
             <span className="title">This Month's Average Temperature</span>
             <span className="value">{temperatureRate}°C</span>
-          </div>{" "}
+          </div>
           <div className="infocard-details">
             <img src={Socket} alt="Socket-icon" id="main-icon" />
             <span className="title">Plug Type[s]</span>

@@ -1,0 +1,66 @@
+.itineary {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+    url("../../../assets/hero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.add-itineary {
+  padding: 2rem;
+  border: 2px solid black;
+  border-radius: 15px;
+
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  background: var(--primary-colour);
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30vw;
+  }
+  &__back {
+    padding-right: 1rem;
+    width: 2rem;
+  }
+  &__form {
+    padding-left: 1rem;
+    &--body {
+      display: flex;
+      flex-direction: column;
+    }
+    &--elements {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__item--info {
+    width: 13rem;
+    margin-bottom: 0.5rem;
+    & input {
+      width: 12rem;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    align-items: center;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  &__cancel {
+    border: 2px solid red;
+    color: var(--primary-color);
+  }
+  &__add {
+    border: 2px solid var(--quinary-colour);
+    color: var(--primary-color);
+  }
+}

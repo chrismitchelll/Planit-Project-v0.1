@@ -5,21 +5,21 @@
 //MAIN FONT (OTF)
 @font-face {
   font-family: "Inter";
-  src: url("../../assets/font/Inter-Regular.ttf");
-  font-weight: 400;
+  src: url("../../assets/fonts/Frutiger-Roman.otf");
+  font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("../../assets/font/Inter-Medium.ttf");
-  font-weight: 500;
+  src: url("../../assets/fonts/Frutiger-Roman.otf");
+  font-weight: 600;
   font-style: medium;
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("../../assets/font/Inter-SemiBold.ttf");
+  src: url("../../assets/fonts/Frutiger-Roman.otf");
   font-weight: 600;
   font-style: normal;
 }
@@ -39,56 +39,55 @@ body {
 }
 
 h1 {
-  @include s-page-header;
-  @include medium {
-    @include l-page-header;
-  }
+  // @include s-page-header;
+  // @include medium {
+  //   @include l-page-header;
+  // }
 }
 
 h2 {
-  @include s-subheader;
-  @include medium {
-    @include l-subheader;
-  }
+  // @include s-subheader;
+  // @include medium {
+  //   @include l-subheader;
+  // }
 }
 
 label,
 a {
   @include s-label-link-button;
-  @include medium {
-    @include l-label-link-button;
-  }
+  // @include medium {
+  //   @include l-label-link-button;
+  // }
 }
 
 h4 {
-  color: $secondary-dark;
   @include s-tableheader;
-  @include medium {
-    @include l-tableheader;
-  }
+  // @include medium {
+  //   @include l-tableheader;
+  // }
 }
 
 // MODAL
 aside {
   @include s-body-large;
-  @include medium {
-    @include l-body-large;
-  }
+  // @include medium {
+  //   @include l-body-large;
+  // }
 }
 
 //P TAG BASED ON P2 - BODY MEDIUM
 p {
   @include s-body-medium;
-  @include medium {
-    @include l-body-medium;
-  }
+  // @include medium {
+  //   @include l-body-medium;
+  // }
 }
 
 footer {
   @include s-body-small;
-  @include medium {
-    @include l-body-small;
-  }
+  // @include medium {
+  //   @include l-body-small;
+  // }
 }
 
 button {
@@ -96,10 +95,10 @@ button {
   border-radius: 1.25rem;
   height: 2.25rem;
   padding: 0 1rem;
-  @include medium {
-    @include l-label-link-button;
-    height: 2.375rem;
-  }
+  // @include medium {
+  //   @include l-label-link-button;
+  //   height: 2.375rem;
+  // }
 }
 
 input {
@@ -107,9 +106,9 @@ input {
   border-radius: 1.25rem;
   padding: 0 1rem;
   height: 2.25rem;
-  @include medium {
-    height: 2.375rem;
-  }
+  // @include medium {
+  //   height: 2.375rem;
+  // }
   &::placeholder {
     color: $secondary-dark;
   }

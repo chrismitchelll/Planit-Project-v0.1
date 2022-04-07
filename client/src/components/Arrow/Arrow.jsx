@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./arrow.scss";
-import chevron from "../../../assets/icons/chevron-right-24px.svg";
+import chevron from "../../assets/icons/back-button.png";
 
 export class Arrow extends Component {
   render() {

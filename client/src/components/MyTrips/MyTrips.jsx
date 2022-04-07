@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Itineary from "../../../components/Itineary/Itineary";
+import Itineary from "../Itineary/Itineary";
 
 export default class MyTrips extends Component {
   state = {
