@@ -49,8 +49,8 @@ a {
 .page {
   background-color: var(--primary-colour);
   color: var(--secondary-colour);
-  padding-left: 14rem;
-  padding-right: 14rem;
+  padding-left: 12rem;
+  padding-right: 12rem;
   padding-top: 1rem;
   padding-bottom: 2rem;
 }
@@ -74,4 +74,8 @@ select {
 
 #hidden {
   visibility: hidden;
+}
+
+#sub-page-container {
+  background-color: var(--primary-colour);
 }

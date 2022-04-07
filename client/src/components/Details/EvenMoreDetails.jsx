@@ -73,16 +73,16 @@ export default function Details({ basicDetails, complexDetails }) {
         </div>
         <div className="infocard-details__wrapper">
           <div className="infocard-details">
-            <img src={Cheers} alt="Cheers-icon" id="main-icon" />
-            <span className="title">How to Say "Cheers"</span>
-            <span className="value">
-              {cheersData} ("{pronunciationData}")
-            </span>
-          </div>
-          <div className="infocard-details">
             <img src={Beer} alt="Beer-icon" id="main-icon" />
             <span className="title">Most Popular Beer</span>
             <span className="value">{beerData}</span>
+          </div>
+          <div className="infocard-details">
+            <img src={Cheers} alt="Cheers-icon" id="main-icon" />
+            <span className="title">How to Say "Cheers"</span>
+            <span className="value">
+              {cheersData} <br></br>("{pronunciationData}")
+            </span>
           </div>
         </div>
         <div className="infocard-details__wrapper">

@@ -40,7 +40,7 @@ export default function PageFooter() {
               <p className="footer__text">About</p>
             </div>
           </Link>
-          <Link className="footer__link" to="/intro">
+          <Link className="footer__link" to="/about">
             <div className="footer__textbox">
               <p className="footer__text">by Christian Mitchell</p>
             </div>

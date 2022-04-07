@@ -8,7 +8,10 @@ export default class Tips extends Component {
         <div className="section-header">
           <h1>Budgeting Tips</h1>
         </div>
-        <div className="content-wrapper budget-links__wrapper">
+        <div
+          className="content-wrapper budget-links__wrapper"
+          id="sub-page-container"
+        >
           <div className="budget-overview">
             <div className="budget-overview__summary">
               <h2>Budget Tips</h2>
