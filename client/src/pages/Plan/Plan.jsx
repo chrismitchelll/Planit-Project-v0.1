@@ -21,7 +21,7 @@ export default class Plan extends Component {
     basicCountryDetails: "",
     noOfPeople: "",
     days: "",
-    month: "",
+    month: "January",
     show: false,
   };
 
@@ -93,6 +93,7 @@ export default class Plan extends Component {
   setDays = (event) => {
     this.setState({ days: event.target.value });
   };
+
   setMonth = (event) => {
     this.setState({ month: event.target.value });
   };
@@ -115,28 +116,28 @@ export default class Plan extends Component {
 
             <Conditions
               setNumber={this.setNumber}
-              setMonth={this.state.month}
+              setMonth={this.setMonth}
               setDays={this.setDays}
             />
-            {/* // )} */}
+
             {(!this.state.days ||
               !this.state.noOfPeople ||
               !this.state.complexCountryDetails) && (
               <div className="plan__wrapper"> </div>
             )}
 
-            {this.state.days &&
+            {/* {this.state.days &&
               this.state.noOfPeople &&
-              // this.state.month &&
-              this.state.complexCountryDetails && (
-                <Total
-                  noOfPeople={this.state.noOfPeople}
-                  days={this.state.days}
-                  month={this.state.month}
-                  basicDetails={this.state.basicCountryDetails}
-                  complexDetails={this.state.complexCountryDetails}
-                />
-              )}
+              this.state.month &&
+              this.state.complexCountryDetails && ( */}
+            <Total
+              noOfPeople={this.state.noOfPeople}
+              days={this.state.days}
+              month={this.state.month}
+              basicDetails={this.state.basicCountryDetails}
+              complexDetails={this.state.complexCountryDetails}
+            />
+            {/* )} */}
           </div>
         </div>
         <div className="page" id="sub-page">

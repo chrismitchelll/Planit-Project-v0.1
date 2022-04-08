@@ -13,7 +13,7 @@ import Profile from "./pages/Profile/Profile";
 import Plan from "./pages/Plan/Plan";
 import MyTrips from "./components/MyTrips/MyTrips";
 // import Login from "./components/Login/Login";
-import Landing from "./pages/Landing/Landing";
+// import Landing from "./pages/Landing/Landing";
 import AddTrip from "./components/Itineary/AddTrip/AddTrip";
 import EditTrip from "./components/Itineary/Edit/EditTripContainer";
 import "./styles/styles.scss";
@@ -22,13 +22,13 @@ function App() {
   return (
     <Router>
       <>
-        <Switch>
+        {/* <Switch>
           <Route
             exact
             path="/welcome"
             render={(routerProps) => <Landing {...routerProps} />}
           />
-        </Switch>
+        </Switch> */}
         <Switch>
           <Redirect exact from="/home" to="/" />
           <Route

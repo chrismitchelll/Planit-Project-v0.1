@@ -13,7 +13,7 @@ export default function Details({ basicDetails, complexDetails }) {
             <div className="infocard-details__title">
               <h3>{complexDetails.country}</h3>
             </div>
-            <p>{complexDetails.Description}</p>
+            <p>{complexDetails.description}</p>
           </div>
         </div>
       </div>

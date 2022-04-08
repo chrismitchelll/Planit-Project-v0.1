@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Header from "../../Header/Header";
+import arrow from "../../../assets/icons/arrow-back-24px.svg";
+import Arrow from "../../../components/Arrow/Arrow";
 import Footer from "../../Footer/Footer";
-// import arrow from "../../assets/icons/arrow-back-24px.svg";
+import Header from "../../Header/Header";
+// Author's Note -- Will add below in phase 2
 // import ValidationMessage from "../../components/ValidationMessage/ValidationMessage";
 // import Swal from "sweetalert2/dist/sweetalert2.js";
 // import "sweetalert2/src/sweetalert2.scss";
@@ -83,93 +85,103 @@ export default class EditTrip extends Component {
   render() {
     return (
       <>
-        {/* <Header /> */}
-        <div className="itineary">
-          <h1 className="itineary__header">
-            <Link to={`/plan`} className="itineary__back">
-              {/* <img src={arrow} alt="" /> */}
-            </Link>
-            Edit Trip
-          </h1>
-          <form
-            name="additineary"
-            onSubmit={this.handleSubmit}
-            className="itineary__form"
-          >
-            <div className="itineary__form-elements">
-              <div className="itineary__itineary-info">
-                <h2 className="itineary__section-header">Trip Details</h2>
-                <label>Trip Name</label>
-                <input
-                  onChange={this.handleChange}
-                  className={`${
-                    !this.state.name && !this.state.formValid
-                      ? "edit-itineary__input--missing"
-                      : "edit-itineary__input"
-                  }`}
-                  value={`${this.state.name}`}
-                  name="name"
-                />
-                {this.state.name === "" &&
-                  !this.state.formValid &&
-                  console.log("incomplete")}
-                <label>Destination</label>
-                <input
-                  onChange={this.handleChange}
-                  className={`${
-                    !this.state.streetAdress && !this.state.formValid
-                      ? "edit-itineary__input--missing"
-                      : "edit-itineary__input"
-                  }`}
-                  value={`${this.state.country}`}
-                  name="country"
-                />
-                {this.state.name === "" &&
-                  !this.state.formValid &&
-                  console.log("incomplete")}
-                <label>Estimated Budget</label>
-                <input
-                  onChange={this.handleChange}
-                  className={`${
-                    !this.state.streetAdress && !this.state.formValid
-                      ? "edit-itineary__input--missing"
-                      : "edit-itineary__input"
-                  }`}
-                  value={`${this.state.cost}`}
-                  name="cost"
-                />
-                {/* {this.state.cost === "" && !this.state.formValid && (
+        <Header />
+        <div className="page itineary">
+          <div className="add-itineary__wrapper">
+            <div className="add-itineary">
+              <div className="section-header">
+                <h1>Edit Trip </h1>
+              </div>
+              <div className="add-itineary__form--body">
+                <Link to={`/plan`} className="itineary__back">
+                  {/* <img src={arrow} alt="back arrow" /> */}
+                  <Arrow />
+                </Link>
+
+                <form
+                  name="additineary"
+                  onSubmit={this.handleSubmit}
+                  className="itineary__form"
+                >
+                  <div className="add-itineary__form--elements">
+                    <div className="add-itineary__item--info">
+                      <h2 className="itineary__section-header">Trip Details</h2>
+                      <label>Trip Name</label>
+                      <input
+                        onChange={this.handleChange}
+                        className={`${
+                          !this.state.name && !this.state.formValid
+                            ? "edit-itineary__input--missing"
+                            : "edit-itineary__input"
+                        }`}
+                        value={`${this.state.name}`}
+                        name="name"
+                      />
+                      {this.state.name === "" &&
+                        !this.state.formValid &&
+                        console.log("incomplete")}
+                      <div className="add-itineary__item--info">
+                        <label>Destination</label>
+                        <input
+                          onChange={this.handleChange}
+                          className={`${
+                            !this.state.streetAdress && !this.state.formValid
+                              ? "edit-itineary__input--missing"
+                              : "edit-itineary__input"
+                          }`}
+                          value={`${this.state.country}`}
+                          name="country"
+                        />
+                      </div>
+                      {this.state.name === "" &&
+                        !this.state.formValid &&
+                        console.log("incomplete")}
+                      <label>Estimated Budget</label>
+                      <input
+                        onChange={this.handleChange}
+                        className={`${
+                          !this.state.streetAdress && !this.state.formValid
+                            ? "edit-itineary__input--missing"
+                            : "edit-itineary__input"
+                        }`}
+                        value={`${this.state.cost}`}
+                        name="cost"
+                      />
+                      {/* {this.state.cost === "" && !this.state.formValid && (
                 <ValidationMessage message={"Estimated Budget Required"} />
               )} */}
-                <label>date</label>
-                <input
-                  type="date"
-                  onChange={this.handleChange}
-                  className={`${
-                    !this.state.date && !this.state.formValid
-                      ? "edit-itineary__input--missing"
-                      : "edit-itineary__input"
-                  }`}
-                  value={`${this.state.date}`}
-                  name="date"
-                />
-                {/* {this.state.date === "" && !this.state.formValid && (
+                      <label>date</label>
+                      <input
+                        type="date"
+                        onChange={this.handleChange}
+                        className={`${
+                          !this.state.date && !this.state.formValid
+                            ? "edit-itineary__input--missing"
+                            : "edit-itineary__input"
+                        }`}
+                        value={`${this.state.date}`}
+                        name="date"
+                      />
+                      {/* {this.state.date === "" && !this.state.formValid && (
                 <ValidationMessage message={"date Required"} />
               )} */}
+                    </div>
+                  </div>
+
+                  <div className="add-itineary__buttons">
+                    <Link className="add-itineary__cancel-link" to="/plan/">
+                      <button className="add-itineary__cancel">Cancel</button>
+                    </Link>
+                    <button type="submit" className="add-itineary__add">
+                      Save
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
-
-            <div className="itineary__buttons">
-              <Link className="itineary__buttons__cancel-link" to="/plan">
-                <button className="itineary__buttons__cancel">Cancel</button>
-              </Link>
-              <button type="submit" className="itineary__add">
-                Save
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </>
     );
   }

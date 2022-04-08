@@ -84,7 +84,7 @@ export default function Darkmode({}) {
                 id="userIcon"
               />
             </Link> */}
-            <Link to={`/plan/trips`}>
+            <Link to={`/about`}>
               <img src={userIcon} id="userIcon" alt="user-icon" />
             </Link>
           </div>

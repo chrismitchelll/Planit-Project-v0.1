@@ -11,7 +11,8 @@ export default class AddTrip extends Component {
         <Header />
         <div className="page itineary">
           <AddNewTripContainer
-          //   match={this.props.match}
+            history={this.props.history}
+            match={this.props.match}
           />
         </div>
         <Footer />

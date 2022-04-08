@@ -22,6 +22,18 @@ export default function Conditions({ setNumber, setDays, setMonth }) {
       <div className="plan__wrapper ">
         <div className="plan__conditions">
           <div className="plan__conditions--form">
+            <h5>When Will You Travel?</h5>
+            <select onChange={setMonth} className="plan-card__select">
+              {months.map((month) => (
+                <option key={month} value={month}>
+                  {month}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+        <div className="plan__conditions">
+          <div className="plan__conditions--form">
             <h5>For How Many Days?</h5>
             <select onChange={setDays} className="plan-card__select">
               <option value="0">-</option>
@@ -36,9 +48,8 @@ export default function Conditions({ setNumber, setDays, setMonth }) {
         </div>
 
         <div className="plan__conditions">
-          {" "}
           <div className="plan__conditions--form">
-            <h5>How Many Travelers?</h5>
+            <h5>How Many Travellers?</h5>
             <input
               className="plan-card__input"
               onChange={setNumber}
@@ -47,20 +58,6 @@ export default function Conditions({ setNumber, setDays, setMonth }) {
               min="1"
               max="99"
             />
-          </div>
-        </div>
-
-        <div className="plan__conditions">
-          {" "}
-          <div className="plan__conditions--form">
-            <h5>When Will You Travel?</h5>
-            <select onChange={setMonth} className="plan-card__select">
-              {months.map((month) => (
-                <option key={month} value={month}>
-                  {month}
-                </option>
-              ))}
-            </select>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React from "react";
 import Confirm from "../../components/Buttons/ConfirmButton/Confirm";
 import Budget from "../../assets/icons/budget/budget.png";
 import Weather from "../../assets/icons/sun.png";
+import Rain from "../../assets/icons/umbrella.png";
 import "./total.scss";
 
 export default function Total({
@@ -13,27 +14,51 @@ export default function Total({
   days,
   month,
 }) {
-  // state = {
-  //   currency: null,
-  // };
+  //can change to this.props. for above values
+  let budgetCalculator = 0;
 
-  const budgetCalculator = (
-    (complexDetails.daily +
-      complexDetails.entertainment +
-      complexDetails.meals +
-      complexDetails.transportation +
-      complexDetails.alcohol) *
-    days *
-    noOfPeople
-  ).toFixed(0);
+  if (complexDetails) {
+    budgetCalculator = parseFloat(
+      (
+        (complexDetails.daily +
+          complexDetails.entertainment +
+          complexDetails.meals +
+          complexDetails.transportation +
+          complexDetails.alcohol) *
+        days *
+        noOfPeople
+      ).toFixed(0)
+    );
+  }
 
-  const temperatureRate = (
-    Math.round(basicDetails.weather.April.tAvg * 100) / 100
-  ).toFixed(1);
+  let temperatureRate = 0;
 
-  const conversionRate = (
-    Math.round(basicDetails.currency.rate * 100) / 100
-  ).toFixed(2);
+  if (basicDetails.weather) {
+    ///when accessing object keys dynamically, use [brackets]
+    temperatureRate = (
+      Math.round(basicDetails.weather[month].tAvg * 100) / 100
+    ).toFixed(1);
+  }
+
+  ///when accessing object keys dynamically, use [brackets]
+  let rainRate = 0;
+  if (basicDetails.weather) {
+    rainRate = (
+      Math.round(basicDetails.weather[month].pAvg * 100) / 100
+    ).toFixed(1);
+  }
+
+  let currencyRate = 0;
+  if (basicDetails.currency) {
+    currencyRate = (Math.round(basicDetails.currency.rate * 100) / 100).toFixed(
+      2
+    );
+  }
+
+  let currencyValue = "-";
+  if (basicDetails.currency && budgetCalculator !== 0) {
+    currencyValue = basicDetails.currency.code + " " + budgetCalculator;
+  }
 
   return (
     <>
@@ -42,10 +67,7 @@ export default function Total({
           <div className="card-details">
             <img src={Budget} alt="budget-icon" id="budget-icon" />
             <span className="title">Estimated Trip Cost:</span>
-            <span>
-              {basicDetails.currency.code}
-              {budgetCalculator}
-            </span>
+            <span>{currencyValue}</span>
           </div>
 
           {/* <div className="infocard-details">
@@ -60,13 +82,19 @@ export default function Total({
             </button>
             <span className="title">$1:</span>
             <span className="value">
-              {conversionRate}, {basicDetails.currency.code}
+              {currencyRate}, {basicDetails.currency.code}
             </span>
           </div> */}
           <div className="card-details">
             <img src={Weather} alt="weather-icon" id="budget-icon" />
             <span className="title">Temperature Estimate</span>
-            <span className="value">{temperatureRate}°C</span>
+            <span className="value">{temperatureRate ?? "..."}°C</span>
+          </div>
+
+          <div className="card-details">
+            <img src={Rain} alt="weather-icon" id="budget-icon" />
+            <span className="title">Precipitation Estimate</span>
+            <span className="value">{rainRate ? `${rainRate} mm` : "..."}</span>
           </div>
         </div>
         {/* <div className="card-details">

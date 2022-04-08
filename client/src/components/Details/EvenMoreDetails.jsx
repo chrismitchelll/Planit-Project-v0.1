@@ -21,11 +21,11 @@ export default function Details({ basicDetails, complexDetails }) {
   console.log(complexDetails.nationalgetAnimaltype);
 
   //a function to display a message "Currently Unknown" if {complexDetails.nationalgetAnimal} is empty
-  const getAnimal = complexDetails.nationalgetAnimal
-    ? complexDetails.nationalgetAnimal
+  const getAnimal = complexDetails.nationalanimal
+    ? complexDetails.nationalanimal
     : "Currently Unknown";
-  const getAnimaltype = complexDetails.nationalgetAnimaltype
-    ? complexDetails.nationalgetAnimaltype
+  const getAnimaltype = complexDetails.nationalanimaltype
+    ? complexDetails.nationalanimaltype
     : "N/A";
   const dishData = complexDetails.nationaldishes
     ? complexDetails.nationaldishes
@@ -67,7 +67,8 @@ export default function Details({ basicDetails, complexDetails }) {
             <img src={Animal} alt="Dish-icon" id="main-icon" />
             <span className="title">National Animal</span>
             <span className="value">
-              {getAnimal}({getAnimaltype})
+              {getAnimal}
+              <br></br>({getAnimaltype})
             </span>
           </div>
         </div>

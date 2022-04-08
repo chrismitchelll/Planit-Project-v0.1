@@ -88,7 +88,6 @@ export default class Affiliates extends Component {
             </a>
             <a href="http://www.muchbetteradventures.com">
               <div className="affiliate-card">
-                {" "}
                 <img
                   src={MuchBetterAdventures}
                   alt="weather-icon"

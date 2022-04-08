@@ -14,7 +14,6 @@ export default class Tips extends Component {
         >
           <div className="budget-overview">
             <div className="budget-overview__summary">
-              <h2>Budget Tips</h2>
               <span className="budget-overview__wrapper">
                 <div className="budget-overview__textbox">
                   <h3>1. Come up with a plan</h3>
@@ -28,6 +27,57 @@ export default class Tips extends Component {
                   last-minute flights and accommodation are often far more
                   expensive.
                 </div>
+              </span>
+              <span className="budget-overview__wrapper"></span>
+              <span className="budget-overview__wrapper">
+                <div className="budget-overview__textbox"></div>
+              </span>
+              <span className="budget-overview__wrapper">
+                <div className="budget-overview__textbox">
+                  <h3>3. Be accommodation-savvy</h3> Trade expensive hotel
+                  suites for dorm rooms in hostels. Sharing a room naturally
+                  divides the costs and communal bunk rooms offer the
+                  opportunity to meet people who might be keen to explore with
+                  you. Other great alternatives are websites like AirBnB and
+                  Couchsurfing, where you simply book a spare room in a local
+                  person’s house or apartment. It’ll halve the price and allow
+                  you an authentic snapshot of real life in the city. Consider
+                  your host your very own, personal tour guide, filled with
+                  insider-tips for the best eateries and tourist spots in that
+                  neighbourhood.
+                </div>
+              </span>
+              <span className="budget-overview__wrapper">
+                <div className="budget-overview__textbox"></div>
+              </span>
+              <span className="budget-overview__wrapper">
+                <div className="budget-overview__textbox">
+                  <h3> 5. Book flights in advance…</h3>
+                  Especially return flights; running out of money abroad without
+                  a guaranteed ticket home is never ideal. Airlines ‘release’
+                  their flight seats up to a year in advance and the closer you
+                  get to your departure date, the more the prices increase,
+                  especially inthe last month.
+                </div>
+              </span>
+              <div className="budget-overview__textbox">
+                <span className="budget-overview__wrapper"></span>
+              </div>
+              <span className="budget-overview__wrapper">
+                <div className="budget-overview__textbox">
+                  <h3>7. Embrace public transport </h3>Buses and trains are
+                  cheaper than planes. It’s that simple! A journey on an
+                  overnight train also mean you have one less night in a hostel
+                  to pay for…
+                </div>
+              </span>
+              <span className="budget-overview__wrapper">
+                <div className="budget-overview__textbox"></div>{" "}
+              </span>
+            </div>
+            <div className="budget-overview__summary">
+              <span className="budget-overview__wrapper">
+                <div className="budget-overview__textbox"></div>
               </span>
               <span className="budget-overview__wrapper"></span>
               <span className="budget-overview__wrapper">
@@ -45,22 +95,7 @@ export default class Tips extends Component {
                 </div>
               </span>
               <span className="budget-overview__wrapper">
-                <div className="budget-overview__textbox">
-                  <h3>3. Be accommodation-savvy</h3> Trade expensive hotel
-                  suites for dorm rooms in hostels. Sharing a room naturally
-                  divides the costs and communal bunk rooms offer the
-                  opportunity to meet people who might be keen to explore with
-                  you. Other great alternatives are websites like AirBnB and
-                  Couchsurfing, where you simply book a spare room in a local
-                  person’s house or apartment. It’ll halve the price and allow
-                  you an authentic snapshot of real life in the city. Consider
-                  your host your very own, personal tour guide, filled with
-                  insider-tips for the best eateries and tourist spots in that
-                  neighbourhood. You could even stay with family or friends.
-                  Reach out to people you know or plan a trip to somewhere that
-                  a long-lost cousin or school friend now lives – this could
-                  take you to visit places you’d never have thought of before.
-                </div>
+                <div className="budget-overview__textbox"></div>
               </span>
               <span className="budget-overview__wrapper">
                 <div className="budget-overview__textbox">
@@ -74,37 +109,24 @@ export default class Tips extends Component {
                 </div>
               </span>
               <span className="budget-overview__wrapper">
-                <div className="budget-overview__textbox">
-                  <h3> 5. Book flights in advance…</h3>
-                  Especially return flights; running out of money abroad without
-                  a guaranteed ticket home is never ideal. Airlines ‘release’
-                  their flight seats up to a year in advance and the closer you
-                  get to your departure date, the more the prices increase,
-                  especially inthe last month.
-                </div>
+                <div className="budget-overview__textbox"></div>
               </span>
               <div className="budget-overview__textbox">
                 <span className="budget-overview__wrapper">
-                  <h3>6. …and be smart about how you fly</h3> Opt to travel on a
-                  Tuesday. Midweek travel prices are lower as a premium is added
-                  to weekend flights and you’ll breeze through shorter queues at
-                  airport check-in desks and security. Fly economy too – there’s
-                  no need to upgrade, no matter how nice Business Class looks.
-                  The money you save on cheap seats can be spent on food or
-                  accommodation when you arrive. Low-cost, budget airlines are
-                  fine for short flights and regularly have cheap deals. If
-                  you’re planning a weekend trip try to pack light and use only
-                  hand luggage, saving yourself a bit of money on hold luggage.
-                  Learn one of 10 languages in over 50 top cities Learn more
+                  <h3>6. Be smart about how you fly</h3> Midweek travel prices
+                  are lower as a premium is added to weekend flights and you’ll
+                  breeze through shorter queues at airport check-in desks and
+                  security. The money you save on cheap seats can be spent on
+                  food or accommodation when you arrive. Low-cost, budget
+                  airlines are fine for short flights and regularly have cheap
+                  deals. If you’re planning a weekend trip try to pack light and
+                  use only hand luggage, saving yourself a bit of money on hold
+                  luggage. Learn one of 10 languages in over 50 top cities Learn
+                  more
                 </span>
               </div>
               <span className="budget-overview__wrapper">
-                <div className="budget-overview__textbox">
-                  <h3>7. Embrace public transport </h3>Buses and trains are
-                  cheaper than planes. It’s that simple! A journey on an
-                  overnight train also mean you have one less night in a hostel
-                  to pay for…
-                </div>
+                <div className="budget-overview__textbox"></div>
               </span>
               <span className="budget-overview__wrapper">
                 <div className="budget-overview__textbox">

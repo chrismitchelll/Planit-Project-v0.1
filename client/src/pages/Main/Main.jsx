@@ -60,7 +60,7 @@ export default class Home extends Component {
     return (
       <>
         <Header />
-        <div className="page">
+        <div className="page" id="page">
           <div className="section-header">
             <h2>Where Are You Going? </h2>
           </div>

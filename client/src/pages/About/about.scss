@@ -1,18 +1,41 @@
 .about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--primary-colour);
-  color: var(--secondary-colour);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  padding-left: 6rem;
-  padding-right: 6rem;
-}
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+    url("../../assets/hero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-colour);
+    color: var(--secondary-colour);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+  &__section-right,
+  &__section-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-.about h1 {
-  border-bottom: 2px solid black;
+    width: 100%;
+  }
+
+  &__section-left {
+    width: 80%;
+  }
+  &__icons {
+    filter: brightness(0) invert(1);
+    width: 4rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }
 
 .about-links {
@@ -25,20 +48,18 @@
   padding-bottom: 2rem;
 }
 
-.section-right,
-.section-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
+#tech-stack {
+  width: 10rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 2rem;
 }
 
-#tech-stack {
-  width: 50%;
+.tech-stack {
+  display: flex;
+  align-items: center;
 }
 
 #author {
-  width: 20%;
+  width: 20rem;
 }

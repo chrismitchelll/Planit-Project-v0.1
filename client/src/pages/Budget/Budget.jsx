@@ -151,7 +151,6 @@ export default class Budget extends Component {
               ea atque.
             </div> */}
               <div className="budget-background__section">
-                {" "}
                 <h3>Why a BigMac Index?</h3>
                 The Big Mac index refers to the cost of a burger in McDonald's
                 network. Every BigMac sold requires meat, vegetables, cheese,

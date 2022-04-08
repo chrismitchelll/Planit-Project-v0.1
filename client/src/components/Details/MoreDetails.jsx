@@ -14,8 +14,12 @@ export default function Details({ basicDetails, complexDetails }) {
     Math.round(basicDetails.currency.rate * 100) / 100
   ).toFixed(2);
 
+  // 👇️ Get Name of Current Month
+  const nameOfMonth = new Date().toLocaleString("default", { month: "long" });
+  console.log(nameOfMonth);
+
   const temperatureRate = (
-    Math.round(basicDetails.weather.April.tAvg * 100) / 100
+    Math.round(basicDetails.weather[nameOfMonth].tAvg * 100) / 100
   ).toFixed(1);
 
   const vaccinationMarkup =
