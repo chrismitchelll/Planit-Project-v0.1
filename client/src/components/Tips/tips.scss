@@ -16,7 +16,8 @@
 .budget-overview__summary {
 }
 
-.budget-overview__textbox {
+.budget-overview__textbox,
+.budget-overview__image {
   display: flex;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -24,4 +25,15 @@
   width: 30rem;
   flex-direction: column;
   justify-content: center;
+}
+
+.budget-overview__image {
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+  //   url("../../assets/hero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }

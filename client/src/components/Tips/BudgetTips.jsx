@@ -30,7 +30,7 @@ export default class Tips extends Component {
               </span>
               <span className="budget-overview__wrapper"></span>
               <span className="budget-overview__wrapper">
-                <div className="budget-overview__textbox"></div>
+                <div className="budget-overview__image"></div>
               </span>
               <span className="budget-overview__wrapper">
                 <div className="budget-overview__textbox">
@@ -48,7 +48,7 @@ export default class Tips extends Component {
                 </div>
               </span>
               <span className="budget-overview__wrapper">
-                <div className="budget-overview__textbox"></div>
+                <div className="budget-overview__image"></div>
               </span>
               <span className="budget-overview__wrapper">
                 <div className="budget-overview__textbox">
@@ -61,7 +61,7 @@ export default class Tips extends Component {
                 </div>
               </span>
               <div className="budget-overview__textbox">
-                <span className="budget-overview__wrapper"></span>
+                <span className="budget-overview__image"></span>
               </div>
               <span className="budget-overview__wrapper">
                 <div className="budget-overview__textbox">
@@ -72,12 +72,12 @@ export default class Tips extends Component {
                 </div>
               </span>
               <span className="budget-overview__wrapper">
-                <div className="budget-overview__textbox"></div>{" "}
+                <div className="budget-overview__image"></div>{" "}
               </span>
             </div>
             <div className="budget-overview__summary">
               <span className="budget-overview__wrapper">
-                <div className="budget-overview__textbox"></div>
+                <div className="budget-overview__image"></div>
               </span>
               <span className="budget-overview__wrapper"></span>
               <span className="budget-overview__wrapper">
@@ -95,7 +95,7 @@ export default class Tips extends Component {
                 </div>
               </span>
               <span className="budget-overview__wrapper">
-                <div className="budget-overview__textbox"></div>
+                <div className="budget-overview__image"></div>
               </span>
               <span className="budget-overview__wrapper">
                 <div className="budget-overview__textbox">
@@ -109,7 +109,7 @@ export default class Tips extends Component {
                 </div>
               </span>
               <span className="budget-overview__wrapper">
-                <div className="budget-overview__textbox"></div>
+                <div className="budget-overview__image"></div>
               </span>
               <div className="budget-overview__textbox">
                 <span className="budget-overview__wrapper">
@@ -126,7 +126,7 @@ export default class Tips extends Component {
                 </span>
               </div>
               <span className="budget-overview__wrapper">
-                <div className="budget-overview__textbox"></div>
+                <div className="budget-overview__image"></div>
               </span>
               <span className="budget-overview__wrapper">
                 <div className="budget-overview__textbox">

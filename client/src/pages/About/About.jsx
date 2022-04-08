@@ -22,7 +22,6 @@ export class About extends Component {
     return (
       <>
         <Header />
-        {/* <Foot2 /> */}
 
         <div className="about">
           <div className="about__wrapper">

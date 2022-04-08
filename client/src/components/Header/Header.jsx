@@ -5,10 +5,10 @@ import sun from "../../assets/icons/dark-mode/sun.png";
 import moon from "../../assets/icons/dark-mode/moon.png";
 import userIcon from "../../assets/icons/user.png";
 import logoIcon from "../../assets/planit.png";
-import Exchange from "../../assets/icons/taskbar/exchange.png";
-import Itineary from "../../assets/icons/navbar/itineary.png";
-import Budget from "../../assets/icons/navbar/budget.png";
-import Inform from "../../assets/icons/navbar/inform.png";
+// import Exchange from "../../assets/icons/taskbar/exchange.png";
+// import Itineary from "../../assets/icons/navbar/itineary.png";
+// import Budget from "../../assets/icons/navbar/budget.png";
+// import Inform from "../../assets/icons/navbar/inform.png";
 
 const toggleMode = () => {
   document.body.classList.toggle("dark-theme");

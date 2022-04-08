@@ -16,6 +16,10 @@
   align-items: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  line-height: 1.75rem;
+  &__textbox {
+    font-weight: bold;
+  }
 }
 
 .budget-overview p {

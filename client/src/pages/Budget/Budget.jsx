@@ -10,6 +10,10 @@ import BYT from "../../assets/bytlogo.png";
 import "./budget.scss";
 import axios from "axios";
 
+///-----------------------------------///
+//Note: this is for Phase 2//
+///-----------------------------------///
+
 export default class Budget extends Component {
   state = {
     countries: null,

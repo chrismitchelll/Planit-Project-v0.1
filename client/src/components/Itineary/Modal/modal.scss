@@ -25,7 +25,6 @@
   }
 
   &__close {
-    // padding-top: 1.5rem;
     display: flex;
     justify-content: flex-end;
     color: var(--primary-colour);
@@ -35,10 +34,6 @@
   &__header {
     display: flex;
     flex-direction: column;
-  }
-
-  &__title {
-    // padding-top: 1.5rem;
   }
 
   &__content {

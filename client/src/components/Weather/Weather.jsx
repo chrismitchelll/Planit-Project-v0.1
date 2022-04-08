@@ -1,3 +1,7 @@
+///-----------------------------------///
+//Note: this is for Phase 2//
+///-----------------------------------///
+
 import React from "react";
 import "./weather.scss";
 import WeatherIcon from "../../assets/icons/sun.png";
@@ -100,10 +104,7 @@ export default function Weather({ details }) {
             <span className="title">Temperature Data</span>
             <img src={UmbrellaIcon} alt="rain-icon" id="budget-icon" />
             <span className="title">Expected Rainfall</span>
-            <span className="value">
-              {/* {basicDetails.currency.code}
-            {weeklyCost} */}
-            </span>
+            <span className="value"></span>
           </div>
         </div>
         {h1weatherElements}
@@ -118,10 +119,7 @@ export default function Weather({ details }) {
             <span className="title">Temperature Data</span>
             <img src={UmbrellaIcon} alt="rain-icon" id="budget-icon" />
             <span className="title">Expected Rainfall</span>
-            <span className="value">
-              {/* {basicDetails.currency.code}
-            {weeklyCost} */}
-            </span>
+            <span className="value"></span>
           </div>
         </div>
         {h2weatherElements}
