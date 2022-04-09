@@ -19,7 +19,7 @@ export default class Budget extends Component {
     countries: null,
     complexCountryDetails: null,
     basicCountryDetails: null,
-    budgetLevel: null,
+    budgetLevel: 1,
   };
 
   componentDidMount() {

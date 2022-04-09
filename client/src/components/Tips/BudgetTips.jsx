@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import "./tips.scss";
 
+//-----------------//
+//Commented out for
+//Phase 2 sections //
+//-----------------//
 export default class Tips extends Component {
   render() {
     return (
@@ -29,12 +33,36 @@ export default class Tips extends Component {
                 </div>
               </span>
               <span className="budget-overview__wrapper"></span>
-              <span className="budget-overview__wrapper">
+              {/* <span className="budget-overview__wrapper">
                 <div className="budget-overview__image"></div>
-              </span>
+              </span> */}
               <span className="budget-overview__wrapper">
                 <div className="budget-overview__textbox">
-                  <h3>3. Be accommodation-savvy</h3> Trade expensive hotel
+                  <h3>3. Embrace public transport </h3>Buses and trains are
+                  cheaper than planes. It’s that simple! A journey on an
+                  overnight train also mean you have one less night in a hostel
+                  to pay for…
+                </div>
+              </span>
+              {/* <span className="budget-overview__wrapper">
+                <div className="budget-overview__image"></div>
+              </span> */}
+              <span className="budget-overview__wrapper">
+                <div className="budget-overview__textbox">
+                  <h3> 5. Book flights in advance…</h3>
+                  Especially return flights; running out of money abroad without
+                  a guaranteed ticket home is never ideal. Airlines ‘release’
+                  their flight seats up to a year in advance and the closer you
+                  get to your departure date, the more the prices increase,
+                  especially inthe last month.
+                </div>
+              </span>
+              {/* <div className="budget-overview__textbox">
+                <span className="budget-overview__image"></span>
+              </div> */}
+              <span className="budget-overview__wrapper">
+                <div className="budget-overview__textbox">
+                  <h3>7. Be accommodation-savvy</h3> Trade expensive hotel
                   suites for dorm rooms in hostels. Sharing a room naturally
                   divides the costs and communal bunk rooms offer the
                   opportunity to meet people who might be keen to explore with
@@ -47,38 +75,14 @@ export default class Tips extends Component {
                   neighbourhood.
                 </div>
               </span>
-              <span className="budget-overview__wrapper">
-                <div className="budget-overview__image"></div>
-              </span>
-              <span className="budget-overview__wrapper">
-                <div className="budget-overview__textbox">
-                  <h3> 5. Book flights in advance…</h3>
-                  Especially return flights; running out of money abroad without
-                  a guaranteed ticket home is never ideal. Airlines ‘release’
-                  their flight seats up to a year in advance and the closer you
-                  get to your departure date, the more the prices increase,
-                  especially inthe last month.
-                </div>
-              </span>
-              <div className="budget-overview__textbox">
-                <span className="budget-overview__image"></span>
-              </div>
-              <span className="budget-overview__wrapper">
-                <div className="budget-overview__textbox">
-                  <h3>7. Embrace public transport </h3>Buses and trains are
-                  cheaper than planes. It’s that simple! A journey on an
-                  overnight train also mean you have one less night in a hostel
-                  to pay for…
-                </div>
-              </span>
-              <span className="budget-overview__wrapper">
+              {/* <span className="budget-overview__wrapper">
                 <div className="budget-overview__image"></div>{" "}
-              </span>
+              </span> */}
             </div>
             <div className="budget-overview__summary">
-              <span className="budget-overview__wrapper">
+              {/* <span className="budget-overview__wrapper">
                 <div className="budget-overview__image"></div>
-              </span>
+              </span> */}
               <span className="budget-overview__wrapper"></span>
               <span className="budget-overview__wrapper">
                 <div className="budget-overview__textbox">
@@ -94,9 +98,9 @@ export default class Tips extends Component {
                   time.
                 </div>
               </span>
-              <span className="budget-overview__wrapper">
+              {/* <span className="budget-overview__wrapper">
                 <div className="budget-overview__image"></div>
-              </span>
+              </span> */}
               <span className="budget-overview__wrapper">
                 <div className="budget-overview__textbox">
                   <h3>4. Pack properly </h3>Make sure you bring everything you
@@ -108,9 +112,9 @@ export default class Tips extends Component {
                   every kind of trip.
                 </div>
               </span>
-              <span className="budget-overview__wrapper">
+              {/* <span className="budget-overview__wrapper">
                 <div className="budget-overview__image"></div>
-              </span>
+              </span> */}
               <div className="budget-overview__textbox">
                 <span className="budget-overview__wrapper">
                   <h3>6. Be smart about how you fly</h3> Midweek travel prices
@@ -125,9 +129,9 @@ export default class Tips extends Component {
                   more
                 </span>
               </div>
-              <span className="budget-overview__wrapper">
+              {/* <span className="budget-overview__wrapper">
                 <div className="budget-overview__image"></div>
-              </span>
+              </span> */}
               <span className="budget-overview__wrapper">
                 <div className="budget-overview__textbox">
                   <h3>8. Don’t eat away your cash</h3>
