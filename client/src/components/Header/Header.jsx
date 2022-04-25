@@ -14,7 +14,11 @@ const toggleMode = () => {
   document.body.classList.toggle("dark-theme");
 };
 
-export default function Darkmode({}) {
+let themeData = localStorage.getItem("theme");
+if (themeData == "light") {
+}
+
+export default function Header({}) {
   const [icon, setIcon] = useState(0);
   function toggleIcon() {
     toggleMode();
@@ -94,5 +98,3 @@ export default function Darkmode({}) {
     </>
   );
 }
-
-// export default Darkmode;

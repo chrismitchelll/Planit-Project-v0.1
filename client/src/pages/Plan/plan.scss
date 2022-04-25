@@ -18,12 +18,19 @@
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   padding: 0.5rem;
+  &--form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
 }
-.plan__conditions--form {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
+
+.plan__conditions:hover {
+  opacity: 0.8;
+  transition: 0.35s ease-in-out;
+  transform: translateY(-2px);
+  border-color: var(--quinary-colour);
 }
 
 .plan-card {

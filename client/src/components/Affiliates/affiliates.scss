@@ -6,8 +6,15 @@
   align-items: center;
   justify-content: space-evenly;
   width: 12rem;
-  border: black 1px solid;
+  border: var(--secondary-colour) 1px solid;
   border-radius: 5px;
   box-shadow: 0px 5px 5px -5px black;
   margin: 10px;
+}
+
+.affiliate-card:hover {
+  opacity: 0.8;
+  transition: 0.35s ease-in-out;
+  transform: translateY(-2px);
+  border-color: var(--quinary-colour);
 }

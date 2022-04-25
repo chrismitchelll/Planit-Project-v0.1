@@ -16,6 +16,13 @@
   align-items: center;
 }
 
+.trip-summary:hover {
+  opacity: 0.8;
+  transition: 0.35s ease-in-out;
+  transform: translateY(-2px);
+  border-color: var(--quinary-colour);
+}
+
 .trip-container__main {
   min-height: 10rem;
   display: flex;
@@ -70,6 +77,7 @@
 .planning-wrapper {
   min-height: 30rem;
   padding: 1rem;
+  width: 100%;
 }
 
 .edit-warehouse {

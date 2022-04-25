@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Conditions({ setNumber, setDays, setMonth }) {
-  //create an array of every month
   const months = [
     "January",
     "February",

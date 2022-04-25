@@ -31,8 +31,8 @@ export class About extends Component {
               </div>
               <img src={author} alt="author" id="author" />
               <div className="footer__icon--wrapper">
-                <div className="footer__icon--container">
-                  <Link to={`/about`}>
+                {/* <div className="footer__icon--container"> */}
+                {/* <Link to={`/about`}>
                     <div className="footer__icon--container">
                       <a
                         href="mailto:christian.tp.mitchell@gmail.com"
@@ -40,7 +40,6 @@ export class About extends Component {
                         target="_blank"
                       >
                         <img
-                          className="footer__icon"
                           alt="ext-logo"
                           className="about__icons"
                           src={Email}
@@ -48,7 +47,7 @@ export class About extends Component {
                       </a>
                     </div>
                   </Link>
-                </div>
+                </div> */}
                 <div className="footer__icon--container">
                   <a
                     href="https://github.com/chrismitchelll"
@@ -56,7 +55,6 @@ export class About extends Component {
                     target="_blank"
                   >
                     <img
-                      className="footer__icon"
                       alt="ext-logo"
                       className="about__icons"
                       src={githubIcon}
@@ -70,7 +68,6 @@ export class About extends Component {
                     target="_blank"
                   >
                     <img
-                      className="footer__icon"
                       alt="ext-logo"
                       className="about__icons"
                       src={LinkedIn}

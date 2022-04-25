@@ -19,7 +19,7 @@
   justify-content: space-evenly;
   height: 15rem;
   width: 12rem;
-  border: black 1px solid;
+  border: var(--secondary-colour) 1px solid;
   border-radius: 5px;
   box-shadow: 0px 5px 5px -5px black;
   margin: 10px;
@@ -37,7 +37,8 @@
   }
 }
 
-.infocard-details:hover {
+.infocard-details:hover,
+.summary__paragraph:hover {
   opacity: 0.8;
   transition: 0.35s ease-in-out;
   transform: translateY(-2px);
@@ -98,4 +99,11 @@
   padding-left: 1rem;
   padding-right: 1rem;
   line-height: 1.5rem;
+}
+
+.summary__paragraph:hover {
+  opacity: 0.8;
+  transition: 0.35s ease-in-out;
+  transform: translateY(-2px);
+  border-color: var(--quinary-colour);
 }

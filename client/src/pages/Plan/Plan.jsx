@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import "./plan.scss";
 import Header from "../../components/Header/Header";
@@ -8,8 +7,6 @@ import Selector from "../../components/Selector/Selector";
 import Total from "../../components/Total/Total";
 import Conditions from "../../components/Conditions/Conditions";
 import Itineary from "../../components/Itineary/Itineary";
-import Delete from "../../assets/icons/remove.png";
-import Edit from "../../assets/icons/edit.png";
 import Affiliates from "../../components/Affiliates/Affiliates";
 import ShowItineary from "../../components/Itineary/ShowItineary";
 
@@ -74,7 +71,7 @@ export default class Plan extends Component {
       });
   };
 
-  //could combine called functiosn into 1.
+  //could combine called functions into 1.
   handleSelectedCountry = (event) => {
     this.loadComplexCountryDetails(event.target.value);
     this.loadBasicCountryDetails(event.target.value);
@@ -119,12 +116,6 @@ export default class Plan extends Component {
               setMonth={this.setMonth}
               setDays={this.setDays}
             />
-
-            {(!this.state.days ||
-              !this.state.noOfPeople ||
-              !this.state.complexCountryDetails) && (
-              <div className="plan__wrapper"> </div>
-            )}
 
             {/* {this.state.days &&
               this.state.noOfPeople &&

@@ -8,7 +8,7 @@
   justify-content: space-evenly;
   height: 10rem;
   width: 10rem;
-  border: black 1px solid;
+  border: var(--secondary-colour) 1px solid;
   border-radius: 5px;
   box-shadow: 0px 5px 5px -5px black;
   margin: 10px;
@@ -21,6 +21,7 @@
     opacity: 0.8;
     transition: 0.35s ease-in-out;
     transform: translateY(-2px);
+    border-color: var(--quinary-colour);
   }
   &__main {
     height: 100%;

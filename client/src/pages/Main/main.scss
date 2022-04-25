@@ -13,7 +13,7 @@ body {
 .flag {
   margin-left: 2rem;
   margin-right: 2rem;
-  border: black solid 1px;
+  border: var(--secondary-colour) solid 1px;
   border-radius: 50%;
   height: 10rem;
   width: 10rem;
