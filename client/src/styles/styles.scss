@@ -68,7 +68,7 @@ select {
   align-items: center;
   background: var(--primary-colour);
   backdrop-filter: blur(1px);
-
+  border-radius: 10px;
   justify-content: space-evenly;
   color: var(--secondary-colour);
 }

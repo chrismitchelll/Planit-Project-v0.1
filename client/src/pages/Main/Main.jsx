@@ -104,13 +104,13 @@ export default class Home extends Component {
               />
             )}
 
-          {/* {this.state.basicCountryDetails && (
+          {this.state.basicCountryDetails && (
             <Weather
               details={this.state.basicCountryDetails}
               chosenCountry={this.state.country}
               handleSelectedCountry={this.handleSelectedCountry}
             />
-          )} */}
+          )}
         </div>
 
         <Footer />

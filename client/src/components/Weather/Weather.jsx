@@ -51,7 +51,7 @@ export default function Weather({ details }) {
       // <div className="infocard-details__wrapper">
       <div className="infocard-details weather-card">
         <span className="title">
-          <h4>{forecast.month}</h4>
+          <h3>{forecast.month}</h3>
         </span>
         <span className="value">Temperature</span>
         <span className="value">Average: {forecast.avgTemp}°C</span>
@@ -73,7 +73,7 @@ export default function Weather({ details }) {
       // <div className="infocard-details__wrapper">
       <div className="infocard-details weather-card">
         <span className="title">
-          <h4>{forecast.month}</h4>
+          <h3>{forecast.month}</h3>
         </span>
         <span className="value">Temperature</span>
         <span className="value">Average: {forecast.avgTemp}°C</span>
@@ -95,7 +95,7 @@ export default function Weather({ details }) {
         <h2>Forecast</h2>
       </div>
       <div className="content-wrapper">
-        <div className="weather-card__main">
+        <div className="weather-card__main weather-card">
           <div className="card-details__main">
             <span className="title">
               <h3>Forecast Data</h3>
